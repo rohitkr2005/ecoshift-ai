@@ -8,6 +8,6 @@ echo Close this terminal window whenever you want to stop the server.
 echo.
 
 start http://localhost:8080
-python server.py 8080
+python local_server.py 8080
 
 pause

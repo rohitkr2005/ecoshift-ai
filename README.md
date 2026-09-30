@@ -184,7 +184,7 @@ pip install -r requirements.txt
 ### 3. Launch the Zero-Cache Dashboard Server
 Double-click [`start_dashboard.bat`](start_dashboard.bat) or run:
 ```bash
-python server.py 8080
+python local_server.py 8080
 ```
 
 ### 4. Open in Browser
@@ -223,7 +223,7 @@ ecoshift-ai/
 │   ├── forecast_data.json        # Precomputed Scikit-Learn Model Forecasts
 │   └── optimization_data.json    # 60-Day Dispatch, Carbon Credits & ROI Ledger
 ├── ai_engine.py                  # High-Resolution Telemetry & Scikit-Learn Training Engine
-├── server.py                     # Custom Zero-Cache HTTP Server
+├── local_server.py               # Custom Zero-Cache Local HTTP Server
 ├── start_dashboard.bat           # 1-Click Server & Browser Launcher
 ├── grid.html                     # Page 1: Main Grid Telemetry (AC)
 ├── solar.html                    # Page 2: Solar PV Telemetry (DC)

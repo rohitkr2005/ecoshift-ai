@@ -1,0 +1,26 @@
+# Python local backend & offline ML scripts (EcoShift AI frontend is pure client-side static)
+server.py
+local_server.py
+ai_engine.py
+requirements.txt
+
+# Windows batch & shell helper files
+*.bat
+*.cmd
+start_dashboard.bat
+powershell.bat
+powershell.cmd
+
+# Python bytecode & cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# System and logs
+*.log
+.DS_Store
+Thumbs.db
