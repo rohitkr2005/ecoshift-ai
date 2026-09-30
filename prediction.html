@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Predictive AI Forecasting | EcoShift AI</title>
+    <link rel="stylesheet" href="css/style.css?v=20261001_v4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="theme-forecast">
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar">
+        <div class="brand-section">
+            <div class="brand-logo-icon" style="background: linear-gradient(135deg, #a855f7, #6366f1); box-shadow: 0 0 16px rgba(168, 85, 247, 0.4);">
+                <i class="fas fa-brain"></i>
+            </div>
+            <div class="brand-title-wrap">
+                <h2>EcoShift AI</h2>
+                <span class="sub">InnoVenture 2026</span>
+            </div>
+        </div>
+
+        <div class="nav-label">Telemetry & Ingestion (Step 01)</div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="grid.html">
+                    <i class="fas fa-tower-broadcast"></i>
+                    <span>Page 1: Main Grid</span>
+                    <span class="badge-status" style="background: rgba(56,189,248,0.15); color: var(--accent-grid);">LIVE</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="solar.html">
+                    <i class="fas fa-solar-panel"></i>
+                    <span>Page 2: Solar Power</span>
+                    <span class="badge-status" style="background: rgba(245,158,11,0.15); color: var(--accent-solar);">LIVE</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="wind.html">
+                    <i class="fas fa-wind"></i>
+                    <span>Page 3: Wind Power</span>
+                    <span class="badge-status" style="background: rgba(16,185,129,0.15); color: var(--accent-wind);">LIVE</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-label">Optimization & Carbon ROI</div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="prediction.html" class="active" style="background: linear-gradient(90deg, rgba(99,102,241,0.18), rgba(99,102,241,0.03)); border-color: rgba(99,102,241,0.4); color: var(--indigo);">
+                    <i class="fas fa-brain"></i>
+                    <span>Page 4: Predictive AI</span>
+                    <span class="badge-status" style="background: rgba(99,102,241,0.2); color: #818cf8;">ACTIVE</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="optimization.html">
+                    <i class="fas fa-scale-balanced" style="color: var(--accent-wind);"></i>
+                    <span>Page 5: Carbon & ROI Hub</span>
+                    <span class="badge-status" style="background: rgba(16,185,129,0.2); color: #34d399;">CORE</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-label">Enterprise Access</div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="login.html">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Switch Operator</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Edge & ML Stack Specs (Slide 3 & 5) -->
+        <div class="hw-telemetry-box">
+            <div class="hw-status-title">
+                <span>AI FORECAST ENGINE</span>
+                <span class="pulse-indicator">
+                    <span class="pulse-dot" style="background: var(--indigo);"></span> TRAINED
+                </span>
+            </div>
+            <div class="hw-meta-row">
+                <span>Dataset:</span>
+                <span class="val" style="color: var(--success);">5,760 Points (15-min)</span>
+            </div>
+            <div class="hw-meta-row">
+                <span>Accuracy R²:</span>
+                <span class="val" id="metricR2" style="color: #38bdf8;">0.988</span>
+            </div>
+            <div class="hw-meta-row">
+                <span>MAPE Error:</span>
+                <span class="val" id="metricMape" style="color: var(--success);">2.8%</span>
+            </div>
+            <div class="hw-meta-row">
+                <span>Model:</span>
+                <span class="val" id="metricAlgorithm">Scikit-Learn Ridge</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN DASHBOARD CONTENT -->
+    <div class="main-wrapper">
+        <!-- TOP NAVIGATION BAR -->
+        <header class="top-navbar">
+            <div class="top-title-group">
+                <h1>
+                    <span>Predictive AI Forecasting</span>
+                    <span class="ai-header-badge">
+                        <i class="fas fa-database"></i> 5,760 Live Data Points (15-Min Intervals)
+                    </span>
+                    <span class="source-badge" id="activeSourceTag" style="border: 1px solid var(--purple-ai); color: var(--purple-ai);">
+                        Total Factory Baseload
+                    </span>
+                </h1>
+            </div>
+
+            <div class="top-actions">
+                <a href="data/telemetry_15min_dataset.csv" download class="btn-ctrl" style="text-decoration: none; border-color: rgba(16,185,129,0.4); color: #34d399;">
+                    <i class="fas fa-file-csv" style="color: #10b981;"></i> Download 5,760-Row CSV
+                </a>
+                <div class="pill-status">
+                    <i class="far fa-clock"></i>
+                    <span id="liveClock">Loading time...</span>
+                </div>
+                <button class="btn-ctrl btn-primary" id="btnRunForecast" style="background: var(--purple-ai); box-shadow: 0 0 15px rgba(168,85,247,0.4); color: #ffffff;">
+                    <i class="fas fa-wand-magic-sparkles"></i> Run AI Forecast
+                </button>
+            </div>
+        </header>
+
+        <!-- DASHBOARD BODY -->
+        <main class="dashboard-content">
+            <!-- AI CONTROL DECK (Source, Horizon, Model & Tuning) -->
+            <section class="ai-control-deck">
+                <!-- Source & Horizon Card -->
+                <div class="ai-deck-card">
+                    <div class="deck-header">
+                        <h3>
+                            <i class="fas fa-sliders" style="color: var(--purple-ai);"></i>
+                            <span>Forecasting Scope & Target Inlet (P = V × I)</span>
+                        </h3>
+                        <span style="font-size: 0.72rem; color: var(--text-muted);">Step 1: Select Telemetry Target</span>
+                    </div>
+
+                    <!-- Source Selector Pills -->
+                    <div class="source-pills-row">
+                        <button class="source-pill-btn active" data-source="total">
+                            <i class="fas fa-industry"></i> Total Load (P = V×I)
+                        </button>
+                        <button class="source-pill-btn" data-source="grid">
+                            <i class="fas fa-tower-broadcast"></i> Grid (200-250V AC, 1-16A)
+                        </button>
+                        <button class="source-pill-btn" data-source="solar">
+                            <i class="fas fa-solar-panel"></i> Solar (0-48V DC, 0-16A)
+                        </button>
+                        <button class="source-pill-btn" data-source="wind">
+                            <i class="fas fa-wind"></i> Wind (0-48V DC, 0-16A)
+                        </button>
+                    </div>
+
+                    <!-- Horizon & Model Inputs -->
+                    <div class="controls-subgrid">
+                        <div class="control-input-group">
+                            <label>Forecast Horizon</label>
+                            <div class="horizon-btn-group">
+                                <button class="horizon-btn" data-horizon="14">14 Days</button>
+                                <button class="horizon-btn active" data-horizon="30">Next Month (30d)</button>
+                                <button class="horizon-btn" data-horizon="60">Next 2 Mo (60d)</button>
+                            </div>
+                        </div>
+
+                        <div class="control-input-group">
+                            <label>AI Prediction Model</label>
+                            <select class="ai-select" id="aiModelSelect">
+                                <option value="ensemble" selected>Ensemble (Ridge + Harmonic Seasonality)</option>
+                                <option value="ar">AutoRegressive (AR-7 Moving Cycle)</option>
+                                <option value="linear">Linear Baseline Trend Extrapolator</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Live Training Progress Bar Indicator -->
+                    <div class="training-progress-wrap" id="trainingProgressWrap">
+                        <div class="training-status-text">
+                            <i class="fas fa-spinner fa-spin"></i> Fitting Scikit-Learn Model & Computing 95% Confidence Intervals...
+                        </div>
+                        <div style="background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; height: 6px;">
+                            <div class="training-progress-bar" id="trainingProgressBar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenario Tuning Card -->
+                <div class="ai-deck-card">
+                    <div class="deck-header">
+                        <h3>
+                            <i class="fas fa-gears" style="color: var(--cyan);"></i>
+                            <span>Scenario Stress Testing</span>
+                        </h3>
+                        <span style="font-size: 0.72rem; color: var(--text-muted);">Step 2: Adjust Context</span>
+                    </div>
+
+                    <!-- Factory Growth Slider -->
+                    <div class="slider-group">
+                        <div class="slider-label-row">
+                            <span class="k">Factory Production Growth:</span>
+                            <span class="v" id="growthSliderVal">+0%</span>
+                        </div>
+                        <input type="range" class="ai-range-slider" id="growthSlider" min="-20" max="35" value="0" step="5">
+                        <span style="font-size: 0.68rem; color: var(--text-muted);">Simulates industrial expansion or reduced assembly shift load.</span>
+                    </div>
+
+                    <!-- Renewable Weather Factor Slider -->
+                    <div class="slider-group">
+                        <div class="slider-label-row">
+                            <span class="k">Renewable Weather Yield Factor:</span>
+                            <span class="v" id="weatherSliderVal">100%</span>
+                        </div>
+                        <input type="range" class="ai-range-slider" id="weatherSlider" min="70" max="130" value="100" step="5" style="accent-color: var(--cyan);">
+                        <span style="font-size: 0.68rem; color: var(--text-muted);">Adjusts solar irradiance & wind front meteorological probabilities.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DUAL ANALYSIS COMPARISON (60 Days Past Analysis vs. Future Predictions) -->
+            <section class="dual-analysis-grid">
+                <!-- 1. PAST 60-DAY TELEMETRY ANALYSIS -->
+                <div class="analysis-col-card past">
+                    <div class="col-header">
+                        <h3>
+                            <i class="fas fa-clock-rotate-left" style="color: var(--accent-grid);"></i>
+                            <span>Analysis of First 60 Days (Telemetry Ingest)</span>
+                        </h3>
+                        <span class="status-tag ok">60 DAYS ANALYZED</span>
+                    </div>
+
+                    <div class="analysis-metrics-strip">
+                        <div class="analysis-metric-box">
+                            <span class="label">60-Day Cumulative Usage</span>
+                            <div class="val" id="histTotalKwh">-- kWh</div>
+                            <span class="stat-sub" id="histTrendPct">Calculating trend...</span>
+                        </div>
+                        <div class="analysis-metric-box">
+                            <span class="label">Daily Average Consumption</span>
+                            <div class="val" id="histDailyAvg">-- kWh/d</div>
+                            <span class="stat-sub">Actual Measured Baseline</span>
+                        </div>
+                        <div class="analysis-metric-box" style="grid-column: span 2;">
+                            <span class="label">Historical Peak Demand Day</span>
+                            <div class="val" id="histPeakDay" style="font-size: 1.15rem;">--</div>
+                            <span class="stat-sub accent">Maximum Observed Telemetry Surge</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. FUTURE PREDICTED USAGE -->
+                <div class="analysis-col-card future">
+                    <div class="col-header">
+                        <h3>
+                            <i class="fas fa-crystal-ball" style="color: var(--purple-ai);"></i>
+                            <span>Predicted Future Usages & Baseload</span>
+                        </h3>
+                        <span class="status-tag" style="background: rgba(168,85,247,0.2); color: #d8b4fe; border: 1px solid rgba(168,85,247,0.4);">
+                            AI PROJECTION
+                        </span>
+                    </div>
+
+                    <div class="analysis-metrics-strip">
+                        <div class="analysis-metric-box">
+                            <span class="label">Projected Next Month Usage</span>
+                            <div class="val" id="foreTotalKwh" style="color: var(--purple-ai);">-- kWh</div>
+                            <span class="stat-sub" id="foreGrowthPct">Calculating growth...</span>
+                        </div>
+                        <div class="analysis-metric-box">
+                            <span class="label">Projected Daily Average</span>
+                            <div class="val" id="foreDailyAvg">-- kWh/d</div>
+                            <span class="stat-sub">Model Forecast</span>
+                        </div>
+                        <div class="analysis-metric-box" style="grid-column: span 2;">
+                            <span class="label">Projected Peak Surge (Risk Flag)</span>
+                            <div class="val" id="forePeakDay" style="font-size: 1.15rem; color: #f87171;">--</div>
+                            <span class="stat-sub warn" style="color: #f87171;">Baseload Protection Advisory</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MASTER CHART: PAST 60 DAYS + FUTURE FORECAST WITH CONFIDENCE INTERVAL -->
+            <section class="chart-master-card">
+                <div class="chart-header">
+                    <div class="chart-title-area">
+                        <h2>
+                            <i class="fas fa-chart-line" style="color: var(--purple-ai);"></i>
+                            <span>Unified Energy Trajectory: 60-Day History & Future Forecast</span>
+                        </h2>
+                        <p>Continuous timeline showing measured sensor telemetry (first 60 days) alongside Scikit-Learn forecasted usage and 95% confidence bounds.</p>
+                    </div>
+
+                    <div class="chart-toolbar">
+                        <div class="pill-status" style="border-color: rgba(168,85,247,0.3);">
+                            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--purple-ai);"></span>
+                            <span>Vertical line marks Today / Forecast boundary</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Chart.js Canvas -->
+                <div class="main-chart-container" style="height: 420px;">
+                    <canvas id="forecastMasterCanvas"></canvas>
+                </div>
+            </section>
+
+            <!-- FORECAST PREVIEW TABLE (Next 10 Days) -->
+            <section class="bottom-context-grid">
+                <!-- Day-by-Day Forecast Preview Table -->
+                <div class="context-card">
+                    <div class="context-header">
+                        <h3>
+                            <i class="fas fa-list-check" style="color: var(--purple-ai);"></i>
+                            <span>Next 10 Days Forecast Schedule & Baseload Protection</span>
+                        </h3>
+                        <span style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">
+                            Evaluated Every Minute (Slide 4)
+                        </span>
+                    </div>
+                    <div class="packet-table-wrapper">
+                        <table class="packet-table">
+                            <thead>
+                                <tr>
+                                    <th>Forecast Day</th>
+                                    <th>Predicted Load</th>
+                                    <th>95% Confidence Interval</th>
+                                    <th>Baseload Risk Evaluation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="forecastTableBody">
+                                <!-- Populated dynamically by predictive-engine.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Predictive Baseload Protection Specs (Slide 6) -->
+                <div class="context-card">
+                    <div class="context-header">
+                        <h3>
+                            <i class="fas fa-shield-halved" style="color: var(--cyan);"></i>
+                            <span>Predictive Baseload Protection (Slide 6)</span>
+                        </h3>
+                    </div>
+                    <div class="spec-list">
+                        <div class="spec-item">
+                            <span class="k">Protection Goal</span>
+                            <span class="v">Zero Manufacturing Downtime</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="k">Spike Detection</span>
+                            <span class="v">Pre-emptive 24h & 30d Window</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="k">ML Framework</span>
+                            <span class="v">Scikit-Learn Polynomial Ridge</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="k">Seasonality Modes</span>
+                            <span class="v">Fourier Harmonics (7d / 14d)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="k">Confidence Level</span>
+                            <span class="v">95% Uncertainty Cone</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="k">Next Phase Link</span>
+                            <span class="v" style="color: var(--purple-ai);">Optimization Engine (Slide 4)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+            <div class="footer-team-info">
+                <strong>EcoShift AI</strong>
+                <span>• Team AI Catalysts: Rohit Kumar Mandal, Rahul Singh, Ritik</span>
+                <span>• Tribhuvan College Of Environment & Development Sciences</span>
+            </div>
+            <div>
+                <span>Predictive AI Module (Step 02) • InnoVenture 2026</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script execution with cache-buster -->
+    <script src="js/auth.js?v=20261001_v4"></script>
+    <script src="js/predictive-engine.js?v=20261001_v4"></script>
+    <script>
+        const aiEngine = new PredictiveAIEngine();
+        window.addEventListener('DOMContentLoaded', () => {
+            aiEngine.init();
+        });
+    </script>
+</body>
+</html>

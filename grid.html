@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Main Grid Telemetry | EcoShift AI - Ingestion Dashboard</title>
+    <link rel="stylesheet" href="css/style.css?v=20261001_v4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="theme-grid">
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar">
+        <div class="brand-section">
+            <div class="brand-logo-icon">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <div class="brand-title-wrap">
+                <h2>EcoShift AI</h2>
+                <span class="sub">InnoVenture 2026</span>
+            </div>
+        </div>
+
+        <div class="nav-label">Telemetry & Ingestion</div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="grid.html" class="active">
+                    <i class="fas fa-tower-broadcast"></i>
+                    <span>Page 1: Main Grid</span>
+                    <span class="badge-status">LIVE</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="solar.html">
+                    <i class="fas fa-solar-panel"></i>
+                    <span>Page 2: Solar Power</span>
+                    <span class="badge-status" style="background: rgba(245,158,11,0.15); color: var(--accent-solar);">LIVE</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="wind.html">
+                    <i class="fas fa-wind"></i>
+                    <span>Page 3: Wind Power</span>
+                    <span class="badge-status" style="background: rgba(16,185,129,0.15); color: var(--accent-wind);">LIVE</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-label">Optimization & Carbon ROI</div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="prediction.html">
+                    <i class="fas fa-brain" style="color: var(--indigo);"></i>
+                    <span>Page 4: Predictive AI</span>
+                    <span class="badge-status" style="background: rgba(99,102,241,0.2); color: #818cf8;">60d</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="optimization.html">
+                    <i class="fas fa-scale-balanced" style="color: var(--accent-wind);"></i>
+                    <span>Page 5: Carbon & ROI Hub</span>
+                    <span class="badge-status" style="background: rgba(16,185,129,0.2); color: #34d399;">CORE</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-label">Enterprise Access</div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="login.html">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Switch Operator</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Hardware & ThingSpeak Ingestion Status (Architecture Step 01 & 02) -->
+        <div class="hw-telemetry-box">
+            <div class="hw-status-title">
+                <span>EDGE HARDWARE</span>
+                <span class="pulse-indicator">
+                    <span class="pulse-dot"></span> CONNECTED
+                </span>
+            </div>
+            <div class="hw-meta-row">
+                <span>Gateway:</span>
+                <span class="val">ESP32 / RPi 5</span>
+            </div>
+            <div class="hw-meta-row">
+                <span>Active Sensor:</span>
+                <span class="val">PZEM-004T (V3)</span>
+            </div>
+            <div class="hw-meta-row">
+                <span>IoT Ingest:</span>
+                <span class="val">ThingSpeak Cloud</span>
+            </div>
+            <div class="hw-meta-row">
+                <span>Channel:</span>
+                <span class="val">#284190 (Inlet A)</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN DASHBOARD CONTENT -->
+    <div class="main-wrapper">
+        <!-- TOP NAVIGATION BAR -->
+        <header class="top-navbar">
+            <div class="top-title-group">
+                <h1>
+                    <span>Main Grid Power Telemetry</span>
+                    <span class="source-badge grid">Page 1 • Municipal Grid</span>
+                </h1>
+            </div>
+
+            <div class="top-actions">
+                <div class="pill-status">
+                    <i class="far fa-clock"></i>
+                    <span id="liveClock">Loading time...</span>
+                </div>
+                <div class="pill-status">
+                    <i class="fas fa-circle-nodes" style="color: var(--accent-grid);"></i>
+                    <span id="streamBadge" style="font-weight: 700; color: var(--success);">STREAMING 2s</span>
+                </div>
+                <button class="btn-ctrl" id="streamToggleBtn" onclick="manager.toggleLive()">
+                    <i class="fas fa-pause"></i> Pause Stream
+                </button>
+                <button class="btn-ctrl btn-primary" onclick="manager.triggerSpike()">
+                    <i class="fas fa-bolt"></i> Simulate Spike
+                </button>
+            </div>
+        </header>
+
+        <!-- DASHBOARD BODY -->
+        <main class="dashboard-content">
+            <!-- Source Selector Tabs -->
+            <div class="source-quick-tabs">
+                <a href="grid.html" class="tab-btn active grid">
+                    <i class="fas fa-tower-broadcast"></i> Page 1: Main Thermal Grid (Active)
+                </a>
+                <a href="solar.html" class="tab-btn">
+                    <i class="fas fa-solar-panel"></i> Page 2: Solar PV Array
+                </a>
+                <a href="wind.html" class="tab-btn">
+                    <i class="fas fa-wind"></i> Page 3: Wind Micro-Turbines
+                </a>
+            </div>
+
+            <!-- THE 3 REAL-TIME SENSOR TELEMETRY METRICS -->
+            <section class="telemetry-grid">
+                <!-- 1. LIVE VOLTAGE FROM SENSOR -->
+                <div class="sensor-card">
+                    <div class="card-header-flex">
+                        <div class="sensor-label-group">
+                            <span class="type-tag">PZEM Real-Time Ingest</span>
+                            <h3>1. Live Sensor Voltage</h3>
+                        </div>
+                        <div class="sensor-icon-badge">
+                            <i class="fas fa-bolt-lightning"></i>
+                        </div>
+                    </div>
+
+                    <div class="sensor-metric-val">
+                        <span class="value" id="liveVoltageVal">230.0</span>
+                        <span class="unit">V</span>
+                    </div>
+
+                    <div class="mini-metrics-row">
+                        <div class="sub-item">
+                            <span class="sub-label">Min Volts</span>
+                            <span class="sub-val" id="vMinVal">200.0V</span>
+                        </div>
+                        <div class="sub-item">
+                            <span class="sub-label">Nominal</span>
+                            <span class="sub-val">230.0V</span>
+                        </div>
+                        <div class="sub-item">
+                            <span class="sub-label">Max Volts</span>
+                            <span class="sub-val" id="vMaxVal">250.0V</span>
+                        </div>
+                        <div class="sub-item">
+                            <span class="sub-label">AC Frequency</span>
+                            <span class="sub-val">50.0 Hz</span>
+                        </div>
+                    </div>
+
+                    <div class="waveform-box">
+                        <canvas id="voltageCanvas"></canvas>
+                    </div>
+
+                    <div class="sensor-footer">
+                        <span>PZEM-004T Inlet A Line Volts (200V - 250V)</span>
+                        <span class="pzem-id">Status: OPTIMAL</span>
+                    </div>
+                </div>
+
+                <!-- 2. LIVE CURRENT FROM SENSOR -->
+                <div class="sensor-card">
+                    <div class="card-header-flex">
+                        <div class="sensor-label-group">
+                            <span class="type-tag">CT Clamp Sensor Ingest</span>
+                            <h3>2. Live Sensor Current</h3>
+                        </div>
+                        <div class="sensor-icon-badge">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                    </div>
+
+                    <div class="sensor-metric-val">
+                        <span class="value" id="liveCurrentVal">8.50</span>
+                        <span class="unit">A</span>
+                    </div>
+
+                    <div class="mini-metrics-row">
+                        <div class="sub-item">
+                            <span class="sub-label">Range</span>
+                            <span class="sub-val">1A - 16A</span>
+                        </div>
+                        <div class="sub-item">
+                            <span class="sub-label">Peak Inrush</span>
+                            <span class="sub-val" id="aPeakVal">14.8A</span>
+                        </div>
+                        <div class="sub-item">
+                            <span class="sub-label">Breaker Rating</span>
+                            <span class="sub-val">16.0A</span>
+                        </div>
+                        <div class="sub-item">
+                            <span class="sub-label">Load Ratio</span>
+                            <span class="sub-val" id="aAvgVal">53.1%</span>
+                        </div>
+                    </div>
+
+                    <div class="waveform-box">
+                        <canvas id="currentCanvas"></canvas>
+                    </div>
+
+                    <div class="sensor-footer">
+                        <span>Current Transformer #01 (1A - 16A)</span>
+                        <span class="pzem-id">Continuous Load</span>
+                    </div>
+                </div>
+
+                <!-- 3. POWER CONSUMPTION -->
+                <div class="sensor-card">
+                    <div class="card-header-flex">
+                        <div class="sensor-label-group">
+                            <span class="type-tag">Calculated Power: P = V × I</span>
+                            <h3>3. Power Consumption</h3>
+                        </div>
+                        <div class="sensor-icon-badge">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+
+                    <div class="sensor-metric-val">
+                        <span class="value" id="activePowerVal">1.955</span>
+                        <span class="unit">kW</span>
+                    </div>
+
+                    <div class="mini-metrics-row">
+                        <div class="sub-item">
+                            <span class="sub-label">Formula</span>
+                            <span class="sub-val">P = V × I</span>
+                        </div>
+                        <div class="sub-item">
+                            <span class="sub-label">Today's Load</span>
+                            <span class="sub-val" id="todayKwhVal">16.4 kWh</span>
+                        </div>
+                        <div class="sub-item">
+                            <span class="sub-label">Cumulative</span>
+                            <span class="sub-val" id="cumKwhVal">2,324 kWh</span>
+                        </div>
+                    </div>
+
+                    <!-- Visual Load Proportion -->
+                    <div style="margin-top: 1rem; padding: 0.8rem; background: rgba(0,0,0,0.25); border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.03);">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted); margin-bottom: 6px;">
+                            <span>Factory Baseload Draw</span>
+                            <span style="color: var(--accent-grid); font-family: var(--font-mono); font-weight: 700;">Active 53% of 16A Max</span>
+                        </div>
+                        <div style="height: 6px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden;">
+                            <div style="width: 53%; height: 100%; background: linear-gradient(90deg, #38bdf8, #0ea5e9); border-radius: 4px;"></div>
+                        </div>
+                    </div>
+
+                    <div class="sensor-footer">
+                        <span>Power = Voltage × Current (P = V × I)</span>
+                        <span class="pzem-id">Main 16A Breaker</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. GRAPH: POWER CONSUMPTION OF LAST TWO MONTHS -->
+            <section class="chart-master-card">
+                <div class="chart-header">
+                    <div class="chart-title-area">
+                        <h2>
+                            <i class="fas fa-chart-column" style="color: var(--accent-grid);"></i>
+                            <span>4. Main Grid Power Consumption (Last 2 Months)</span>
+                        </h2>
+                        <p>Complete 60-day historical telemetry ingested from PZEM sensor showing daily consumption and 7-day rolling baseline.</p>
+                    </div>
+
+                    <div class="chart-toolbar">
+                        <div class="chart-btn-group">
+                            <button class="c-btn active" id="btnViewDaily" onclick="manager.setChartView('daily')">
+                                <i class="fas fa-calendar-day"></i> Daily (60 Days)
+                            </button>
+                            <button class="c-btn" id="btnViewWeekly" onclick="manager.setChartView('weekly')">
+                                <i class="fas fa-calendar-week"></i> Weekly Rollup
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2-Month Summary Statistics -->
+                <div class="historical-stats-strip">
+                    <div class="h-stat-box">
+                        <span class="stat-label">60-Day Total Grid Intake</span>
+                        <span class="stat-val" id="statTotal60d">-- kWh</span>
+                        <span class="stat-sub positive" id="statMonthChange">Calculating...</span>
+                    </div>
+                    <div class="h-stat-box">
+                        <span class="stat-label">Daily Average Consumption</span>
+                        <span class="stat-val" id="statAvgDaily">-- kWh/d</span>
+                        <span class="stat-sub">Industrial Baseline</span>
+                    </div>
+                    <div class="h-stat-box">
+                        <span class="stat-label">Previous Month Total</span>
+                        <span class="stat-val" id="statM1">-- kWh</span>
+                        <span class="stat-sub">Month 1 Baseline</span>
+                    </div>
+                    <div class="h-stat-box">
+                        <span class="stat-label">Peak Consumption Day</span>
+                        <span class="stat-val" id="statPeakDay" style="font-size: 1.15rem;">--</span>
+                        <span class="stat-sub accent">Maximum Factory Surge</span>
+                    </div>
+                </div>
+
+                <!-- Chart.js Container -->
+                <div class="main-chart-container">
+                    <canvas id="historyChartCanvas"></canvas>
+                </div>
+            </section>
+
+            <!-- TELEMETRY INGESTION CONTEXT & RAW PACKET FEED -->
+            <section class="bottom-context-grid">
+                <!-- Live Ingest Stream -->
+                <div class="context-card">
+                    <div class="context-header">
+                        <h3>
+                            <i class="fas fa-terminal" style="color: var(--accent-grid);"></i>
+                            <span>Live Telemetry Ingestion Log (ESP32 → Cloud)</span>
+                        </h3>
+                        <span style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">
+                            Protocol: Modbus-RTU over JSON / HTTP
+                        </span>
+                    </div>
+                    <div class="packet-table-wrapper">
+                        <table class="packet-table">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>Sensor Hardware</th>
+                                    <th>Voltage</th>
+                                    <th>Current</th>
+                                    <th>Active Power</th>
+                                    <th>Ingest Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="packetTableBody">
+                                <!-- Dynamically populated by telemetry.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Edge Hardware Specs Card (Slide 3 & 5) -->
+                <div class="context-card">
+                    <div class="context-header">
+                        <h3>
+                            <i class="fas fa-microchip" style="color: var(--accent-grid);"></i>
+                            <span>Telemetry Architecture Specs</span>
+                        </h3>
+                    </div>
+                    <div class="spec-list">
+                        <div class="spec-item">
+                            <span class="k">Inlet Identifier</span>
+                            <span class="v">Main Inlet A (Thermal)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="k">Sensor Model</span>
+                            <span class="v">PZEM-004T v3.0</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="k">Microcontroller</span>
+                            <span class="v">ESP32-WROOM-32D</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="k">Sampling Interval</span>
+                            <span class="v">2,000 ms</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="k">Current Transformer</span>
+                            <span class="v">20A / 33.3mA Split-Core (1-16A Range)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="k">IoT Cloud Sink</span>
+                            <span class="v">ThingSpeak REST API</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+            <div class="footer-team-info">
+                <strong>EcoShift AI</strong>
+                <span>• Team AI Catalysts: Rohit Kumar Mandal, Rahul Singh, Ritik</span>
+                <span>• Tribhuvan College Of Environment & Development Sciences</span>
+            </div>
+            <div>
+                <span>Telemetry & Context Ingestion Module • InnoVenture 2026</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script execution with cache-buster -->
+    <script src="js/auth.js?v=20261001_v4"></script>
+    <script src="js/telemetry.js?v=20261001_v4"></script>
+    <script>
+        const manager = new TelemetryManager('grid');
+        window.addEventListener('DOMContentLoaded', () => {
+            manager.init();
+        });
+    </script>
+</body>
+</html>

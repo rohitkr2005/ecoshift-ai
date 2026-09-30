@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Enterprise Sign In | EcoShift AI Platform</title>
+    <link rel="stylesheet" href="css/style.css?v=20261001_v4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .auth-page-wrapper {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            background: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+                        radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.08) 0%, transparent 45%),
+                        var(--bg-primary);
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 980px;
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+
+        .auth-sidebar-showcase {
+            background: linear-gradient(145deg, rgba(16, 185, 129, 0.12), rgba(15, 23, 42, 0.95)),
+                        radial-gradient(circle at 30% 30%, rgba(16, 185, 129, 0.2), transparent 70%);
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .auth-brand-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .auth-brand-head .brand-logo-icon {
+            width: 48px;
+            height: 48px;
+            font-size: 1.5rem;
+        }
+
+        .auth-brand-head h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        .auth-brand-head .sub {
+            font-size: 0.72rem;
+            color: var(--accent-wind);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .auth-pitch {
+            margin: 2.5rem 0;
+        }
+
+        .auth-pitch h3 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .auth-pitch p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .auth-feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .auth-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        .auth-feature-item i {
+            color: var(--accent-wind);
+            font-size: 0.95rem;
+        }
+
+        .auth-card-body {
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .auth-tabs {
+            display: flex;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 4px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .auth-tab-btn {
+            flex: 1;
+            padding: 0.65rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: transparent;
+            color: var(--text-secondary);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .auth-tab-btn.active {
+            background: var(--card-hover);
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .auth-form-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .auth-form-title h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.3rem;
+        }
+
+        .auth-form-title p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.45rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-control-wrap i {
+            position: absolute;
+            left: 14px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .auth-input {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 1rem 0.75rem 2.6rem;
+            font-size: 0.9rem;
+            color: #ffffff;
+            font-family: var(--font-sans);
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .auth-input:focus {
+            border-color: var(--accent-wind);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+        }
+
+        .auth-submit-btn {
+            width: 100%;
+            padding: 0.85rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #ffffff;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.92rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+            margin-top: 1.5rem;
+        }
+
+        .auth-submit-btn:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .auth-msg-alert {
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.82rem;
+            margin-bottom: 1.25rem;
+            display: none;
+        }
+
+        .auth-msg-alert.error {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.35);
+            color: #f87171;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .auth-msg-alert.success {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            color: #34d399;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Fast One-Click Demo Logins */
+        .fast-demo-logins {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .fast-demo-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .demo-chip-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+
+        .demo-user-card {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 0.65rem 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .demo-user-card:hover {
+            background: var(--card-hover);
+            border-color: var(--accent-wind);
+            transform: translateY(-1px);
+        }
+
+        .demo-user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .demo-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--accent-wind);
+            color: #0b1312;
+            font-weight: 800;
+            font-size: 0.78rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .demo-user-text strong {
+            display: block;
+            font-size: 0.82rem;
+            color: #ffffff;
+        }
+
+        .demo-user-text span {
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+        }
+
+        .demo-action-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent-wind);
+            background: rgba(16, 185, 129, 0.12);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 820px) {
+            .auth-container {
+                grid-template-columns: 1fr;
+            }
+            .auth-sidebar-showcase {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-page-wrapper">
+        <div class="auth-container">
+            <!-- Left Showcase Sidebar -->
+            <div class="auth-sidebar-showcase">
+                <div class="auth-brand-head">
+                    <div class="brand-logo-icon" style="background: linear-gradient(135deg, #10b981, #0ea5e9);">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div>
+                        <h2>EcoShift AI</h2>
+                        <div class="sub">InnoVenture 2026 • Team AI Catalysts</div>
+                    </div>
+                </div>
+
+                <div class="auth-pitch">
+                    <h3>Smart Microgrid Dispatch & Carbon Credit Ingestion Hub</h3>
+                    <p>
+                        High-resolution 15-minute telemetry ingest, predictive consumption forecasting, 
+                        and automated renewable priority dispatch maximizing ESG carbon offsets.
+                    </p>
+
+                    <div class="auth-feature-list">
+                        <div class="auth-feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Multi-source Live Sensor Ingestion (Grid, Solar, Wind)</span>
+                        </div>
+                        <div class="auth-feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Scikit-Learn Predictive Model Trained on 5,760 Samples</span>
+                        </div>
+                        <div class="auth-feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Automated Renewable Priority Dispatch & Deficit Balancing</span>
+                        </div>
+                        <div class="auth-feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Verified Carbon Units (VCU) & Financial ROI Ledger</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 0.72rem; color: var(--text-muted);">
+                    <span>Tribhuvan College Of Environment & Development Sciences</span>
+                </div>
+            </div>
+
+            <!-- Right Login Form -->
+            <div class="auth-card-body">
+                <!-- Tabs -->
+                <div class="auth-tabs">
+                    <button class="auth-tab-btn active" id="tabLoginBtn" onclick="switchTab('login')">
+                        <i class="fas fa-lock"></i> Sign In
+                    </button>
+                    <button class="auth-tab-btn" id="tabRegisterBtn" onclick="switchTab('register')">
+                        <i class="fas fa-user-plus"></i> Register
+                    </button>
+                </div>
+
+                <!-- Alert Message Box -->
+                <div class="auth-msg-alert" id="authMsgAlert"></div>
+
+                <!-- SIGN IN FORM -->
+                <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+                    <div class="auth-form-title">
+                        <h2>Welcome Back</h2>
+                        <p>Sign in with your enterprise credentials to access live facility dispatch.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Work Email Address</label>
+                        <div class="form-control-wrap">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="loginEmail" class="auth-input" placeholder="e.g. rohit@ecoshift.ai" required value="rohit@ecoshift.ai">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="form-control-wrap">
+                            <i class="fas fa-key"></i>
+                            <input type="password" id="loginPassword" class="auth-input" placeholder="••••••••" required value="password123">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="auth-submit-btn" id="btnSignInSubmit">
+                        <i class="fas fa-arrow-right-to-bracket"></i> Sign In to Dashboard
+                    </button>
+                </form>
+
+                <!-- REGISTER FORM -->
+                <form id="registerForm" onsubmit="handleRegisterSubmit(event)" style="display: none;">
+                    <div class="auth-form-title">
+                        <h2>Create Facility Account</h2>
+                        <p>Join the EcoShift AI telemetry and carbon ledger network.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <div class="form-control-wrap">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="regName" class="auth-input" placeholder="e.g. Priyanshu Sharma" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Work Email</label>
+                        <div class="form-control-wrap">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="regEmail" class="auth-input" placeholder="priyanshu@ecoshift.ai" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Role / Designation</label>
+                        <div class="form-control-wrap">
+                            <i class="fas fa-id-badge"></i>
+                            <input type="text" id="regRole" class="auth-input" placeholder="e.g. Energy Auditor" value="ESG Energy Auditor" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="form-control-wrap">
+                            <i class="fas fa-key"></i>
+                            <input type="password" id="regPassword" class="auth-input" placeholder="••••••••" required minlength="6">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="auth-submit-btn">
+                        <i class="fas fa-user-check"></i> Register & Enter Dashboard
+                    </button>
+                </form>
+
+                <!-- 1-Click Fast Demo Login for Judges & Testing -->
+                <div class="fast-demo-logins">
+                    <div class="fast-demo-title">
+                        <i class="fas fa-bolt" style="color: var(--accent-solar);"></i>
+                        <span>1-Click Instant Demo Access (Pre-Configured)</span>
+                    </div>
+
+                    <div class="demo-chip-grid">
+                        <div class="demo-user-card" onclick="quickLogin('rohit@ecoshift.ai', 'password123')">
+                            <div class="demo-user-info">
+                                <div class="demo-avatar" style="background: #10b981;">RM</div>
+                                <div class="demo-user-text">
+                                    <strong>Rohit Kumar Mandal</strong>
+                                    <span>Lead Energy Auditor • Team AI Catalysts</span>
+                                </div>
+                            </div>
+                            <span class="demo-action-tag">Sign In <i class="fas fa-chevron-right"></i></span>
+                        </div>
+
+                        <div class="demo-user-card" onclick="quickLogin('rahul@ecoshift.ai', 'password123')">
+                            <div class="demo-user-info">
+                                <div class="demo-avatar" style="background: #0ea5e9;">RS</div>
+                                <div class="demo-user-text">
+                                    <strong>Rahul Singh</strong>
+                                    <span>Chief Sustainability Officer</span>
+                                </div>
+                            </div>
+                            <span class="demo-action-tag">Sign In <i class="fas fa-chevron-right"></i></span>
+                        </div>
+
+                        <div class="demo-user-card" onclick="quickLogin('ritik@ecoshift.ai', 'password123')">
+                            <div class="demo-user-info">
+                                <div class="demo-avatar" style="background: #f59e0b;">RK</div>
+                                <div class="demo-user-text">
+                                    <strong>Ritik</strong>
+                                    <span>Microgrid Operations Engineer</span>
+                                </div>
+                            </div>
+                            <span class="demo-action-tag">Sign In <i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js?v=20261001_v4"></script>
+    <script>
+        function switchTab(mode) {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const tabLoginBtn = document.getElementById('tabLoginBtn');
+            const tabRegisterBtn = document.getElementById('tabRegisterBtn');
+            const alertBox = document.getElementById('authMsgAlert');
+            alertBox.style.display = 'none';
+
+            if (mode === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                tabLoginBtn.classList.add('active');
+                tabRegisterBtn.classList.remove('active');
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                tabRegisterBtn.classList.add('active');
+                tabLoginBtn.classList.remove('active');
+            }
+        }
+
+        function showAlert(msg, isError = true) {
+            const alertBox = document.getElementById('authMsgAlert');
+            alertBox.className = `auth-msg-alert ${isError ? 'error' : 'success'}`;
+            alertBox.innerHTML = `<i class="fas fa-${isError ? 'circle-exclamation' : 'check-circle'}"></i> <span>${msg}</span>`;
+            alertBox.style.display = 'flex';
+        }
+
+        function getRedirectUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const redirect = params.get('redirect');
+            return redirect ? decodeURIComponent(redirect) : 'optimization.html';
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const pass = document.getElementById('loginPassword').value;
+            const res = window.authManager.login(email, pass);
+
+            if (res.success) {
+                showAlert(`Welcome back, ${res.user.name}! Redirecting to dashboard...`, false);
+                setTimeout(() => {
+                    window.location.href = getRedirectUrl();
+                }, 700);
+            } else {
+                showAlert(res.message, true);
+            }
+        }
+
+        function handleRegisterSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const role = document.getElementById('regRole').value;
+            const pass = document.getElementById('regPassword').value;
+
+            const res = window.authManager.signup(name, email, pass, role);
+            if (res.success) {
+                showAlert(`Account created successfully for ${res.user.name}! Redirecting...`, false);
+                setTimeout(() => {
+                    window.location.href = getRedirectUrl();
+                }, 800);
+            } else {
+                showAlert(res.message, true);
+            }
+        }
+
+        function quickLogin(email, pass) {
+            document.getElementById('loginEmail').value = email;
+            document.getElementById('loginPassword').value = pass;
+            const res = window.authManager.login(email, pass);
+            if (res.success) {
+                showAlert(`Signed in as ${res.user.name}! Opening platform...`, false);
+                setTimeout(() => {
+                    window.location.href = getRedirectUrl();
+                }, 600);
+            }
+        }
+    </script>
+</body>
+</html>

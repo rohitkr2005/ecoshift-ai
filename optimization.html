@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Renewable Optimization & Carbon ROI Hub | EcoShift AI</title>
+    <link rel="stylesheet" href="css/style.css?v=20261001_v4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Energy Flow Diagram */
+        .flow-diagram-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flow-nodes-grid {
+            display: grid;
+            grid-template-columns: 1fr 140px 1fr;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .flow-sources-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .flow-node-box {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .flow-node-box.solar { border-left: 4px solid var(--accent-solar); }
+        .flow-node-box.wind { border-left: 4px solid var(--accent-wind); }
+        .flow-node-box.grid { border-left: 4px solid var(--accent-grid); }
+        .flow-node-box.load { border-left: 4px solid #ffffff; background: rgba(16, 185, 129, 0.08); }
+
+        .flow-node-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .flow-node-info i {
+            font-size: 1.4rem;
+        }
+
+        .flow-node-meta h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .flow-node-meta span {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .flow-node-val {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #ffffff;
+        }
+
+        /* Center Dispatch Router */
+        .flow-router-hub {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, rgba(15, 23, 42, 0.8) 70%);
+            border: 2px dashed rgba(16, 185, 129, 0.4);
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
+        }
+
+        .flow-router-hub i {
+            font-size: 1.8rem;
+            color: var(--accent-wind);
+            margin-bottom: 4px;
+        }
+
+        .flow-router-hub span {
+            font-size: 0.68rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .flow-connector-line {
+            height: 3px;
+            background: linear-gradient(90deg, #10b981, #0ea5e9);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Certificate Modal */
+        .cert-modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .cert-modal-backdrop.show {
+            display: flex;
+        }
+
+        .cert-paper {
+            width: 100%;
+            max-width: 760px;
+            background: #0f172a;
+            border: 3px solid #eab308;
+            border-radius: var(--radius-md);
+            padding: 3rem 2.5rem;
+            position: relative;
+            box-shadow: 0 0 45px rgba(234, 179, 8, 0.25);
+            text-align: center;
+        }
+
+        .cert-paper::before {
+            content: '';
+            position: absolute;
+            top: 8px; left: 8px; right: 8px; bottom: 8px;
+            border: 1px solid rgba(234, 179, 8, 0.3);
+            pointer-events: none;
+            border-radius: calc(var(--radius-md) - 4px);
+        }
+
+        .cert-header-icon {
+            font-size: 3rem;
+            color: #eab308;
+            margin-bottom: 0.75rem;
+        }
+
+        .cert-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .cert-subtitle {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.75rem;
+        }
+
+        .cert-body-text {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin: 1.5rem 0;
+        }
+
+        .cert-recipient {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #10b981;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .cert-badges-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1.25rem;
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .cert-badge-box .k {
+            font-size: 0.72rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .cert-badge-box .v {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            font-family: var(--font-mono);
+        }
+
+        .cert-footer-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.78rem;
+            color: #64748b;
+        }
+
+        .cert-close-btn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #ffffff;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .cert-close-btn:hover {
+            background: rgba(239, 68, 68, 0.3);
+        }
+
+        @media (max-width: 860px) {
+            .flow-nodes-grid {
+                grid-template-columns: 1fr;
+            }
+            .flow-router-hub {
+                margin: 1rem auto;
+            }
+            .cert-badges-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="theme-optimization">
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar">
+        <div class="brand-section">
+            <div class="brand-logo-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <div class="brand-title-wrap">
+                <h2>EcoShift AI</h2>
+                <span class="sub">InnoVenture 2026</span>
+            </div>
+        </div>
+
+        <div class="nav-label">Telemetry Ingest (Step 01)</div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="grid.html">
+                    <i class="fas fa-tower-broadcast"></i>
+                    <span>Page 1: Main Grid</span>
+                    <span class="badge-status">AC</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="solar.html">
+                    <i class="fas fa-solar-panel"></i>
+                    <span>Page 2: Solar PV Array</span>
+                    <span class="badge-status">DC</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="wind.html">
+                    <i class="fas fa-wind"></i>
+                    <span>Page 3: Wind Turbines</span>
+                    <span class="badge-status">DC</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-label">AI Forecasting & Analysis</div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="prediction.html">
+                    <i class="fas fa-brain"></i>
+                    <span>Page 4: Predictive AI</span>
+                    <span class="badge-status" style="background: rgba(99, 102, 241, 0.2); color: #818cf8;">60d+</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-label">Optimization & Monetization</div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="optimization.html" class="active">
+                    <i class="fas fa-scale-balanced"></i>
+                    <span>Page 5: Carbon & ROI Hub</span>
+                    <span class="badge-status" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">CORE</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-label">Enterprise Access</div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="login.html">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Switch Operator</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- System Architecture Footnote -->
+        <div class="sidebar-hw-card" style="margin-top: auto;">
+            <div class="hw-head">
+                <i class="fas fa-certificate" style="color: #eab308;"></i>
+                <span>ESG Carbon Ledger</span>
+            </div>
+            <div class="hw-meta-row">
+                <span>Standard:</span>
+                <span class="val">Verra VCS / CEA 0.82</span>
+            </div>
+            <div class="hw-meta-row">
+                <span>Credit Price:</span>
+                <span class="val" id="sbCreditPrice">₹1,500 / VCU</span>
+            </div>
+            <div class="hw-meta-row">
+                <span>Dispatch:</span>
+                <span class="val" style="color: var(--success);">Renewable 1st</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN DASHBOARD WRAPPER -->
+    <div class="main-wrapper">
+        <!-- TOP NAVBAR -->
+        <header class="top-navbar">
+            <div class="top-title-group">
+                <h1>
+                    <span>Smart Renewable Dispatch & Carbon ROI</span>
+                    <span class="source-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);">
+                        Page 5 • CleanTech Optimization Hub
+                    </span>
+                </h1>
+            </div>
+
+            <div class="top-actions">
+                <div class="pill-status">
+                    <i class="far fa-clock"></i>
+                    <span id="liveClock">Loading time...</span>
+                </div>
+
+                <!-- Mode Switcher -->
+                <div class="dispatch-mode-toggle" style="display: flex; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 2px;">
+                    <button class="tab-btn active" id="btnModeOptimized" style="padding: 0.45rem 0.85rem; font-size: 0.78rem;">
+                        <i class="fas fa-bolt" style="color: var(--accent-wind);"></i> EcoShift AI Priority
+                    </button>
+                    <button class="tab-btn" id="btnModeBaseline" style="padding: 0.45rem 0.85rem; font-size: 0.78rem;">
+                        <i class="fas fa-plug"></i> Unoptimized Grid
+                    </button>
+                </div>
+
+                <button class="btn-ctrl btn-primary" onclick="window.optimizer.openCertificateModal()" style="background: linear-gradient(135deg, #eab308, #ca8a04); color: #000; font-weight: 700;">
+                    <i class="fas fa-award"></i> View ESG Certificate
+                </button>
+            </div>
+        </header>
+
+        <!-- DASHBOARD BODY -->
+        <main class="dashboard-content">
+            <!-- 8 KPI EXECUTIVE METRICS -->
+            <section class="telemetry-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 1.5rem;">
+                <!-- 1. Renewable Coverage -->
+                <div class="sensor-card">
+                    <div class="card-header-flex">
+                        <div class="sensor-label-group">
+                            <span class="type-tag" style="color: var(--accent-wind);">Clean Energy Share</span>
+                            <h3 style="font-size: 0.85rem;">Renewable Coverage</h3>
+                        </div>
+                        <div class="sensor-icon-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-wind);">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                    </div>
+                    <div class="sensor-metric-val">
+                        <span class="value" id="kpiRenCoverage" style="color: var(--accent-wind);">17.6%</span>
+                    </div>
+                    <div class="sensor-footer">
+                        <span>Solar DC + Wind DC Priority Dispatch</span>
+                    </div>
+                </div>
+
+                <!-- 2. Grid Energy Avoided -->
+                <div class="sensor-card">
+                    <div class="card-header-flex">
+                        <div class="sensor-label-group">
+                            <span class="type-tag" style="color: var(--accent-grid);">Thermal Offset</span>
+                            <h3 style="font-size: 0.85rem;">Grid Power Saved</h3>
+                        </div>
+                        <div class="sensor-icon-badge" style="background: rgba(14, 165, 233, 0.15); color: var(--accent-grid);">
+                            <i class="fas fa-tower-broadcast"></i>
+                        </div>
+                    </div>
+                    <div class="sensor-metric-val">
+                        <span class="value" id="kpiGridSaved">496 kWh</span>
+                    </div>
+                    <div class="sensor-footer">
+                        <span>60-Day Cumulative Thermal Draw Cut</span>
+                    </div>
+                </div>
+
+                <!-- 3. Carbon Emissions Avoided -->
+                <div class="sensor-card">
+                    <div class="card-header-flex">
+                        <div class="sensor-label-group">
+                            <span class="type-tag" style="color: #34d399;">Emission Factor 0.82</span>
+                            <h3 style="font-size: 0.85rem;">CO₂ Avoided</h3>
+                        </div>
+                        <div class="sensor-icon-badge" style="background: rgba(52, 211, 153, 0.15); color: #34d399;">
+                            <i class="fas fa-smog"></i>
+                        </div>
+                    </div>
+                    <div class="sensor-metric-val">
+                        <span class="value" id="kpiCo2Avoided">0.407 MT</span>
+                    </div>
+                    <div class="sensor-footer">
+                        <span>406.7 kg CO₂ Greenhouse Gas Eliminated</span>
+                    </div>
+                </div>
+
+                <!-- 4. Carbon Credits Earned -->
+                <div class="sensor-card">
+                    <div class="card-header-flex">
+                        <div class="sensor-label-group">
+                            <span class="type-tag" style="color: #eab308;">Verra VCS Standard</span>
+                            <h3 style="font-size: 0.85rem;">Carbon Credits Earned</h3>
+                        </div>
+                        <div class="sensor-icon-badge" style="background: rgba(234, 179, 8, 0.15); color: #eab308;">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                    </div>
+                    <div class="sensor-metric-val">
+                        <span class="value" id="kpiCarbonCredits" style="color: #eab308;">0.407</span>
+                        <span class="unit">VCU</span>
+                    </div>
+                    <div class="sensor-footer">
+                        <span>1 Credit = 1 MT CO₂ Avoided</span>
+                    </div>
+                </div>
+
+                <!-- 5. Total Net Economic Benefit -->
+                <div class="sensor-card">
+                    <div class="card-header-flex">
+                        <div class="sensor-label-group">
+                            <span class="type-tag" style="color: #38bdf8;">Tariff + Credits</span>
+                            <h3 style="font-size: 0.85rem;">Net Economic Value</h3>
+                        </div>
+                        <div class="sensor-icon-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">
+                            <i class="fas fa-indian-rupee-sign"></i>
+                        </div>
+                    </div>
+                    <div class="sensor-metric-val">
+                        <span class="value" id="kpiTotalSavings" style="color: #38bdf8;">₹4,132</span>
+                    </div>
+                    <div class="sensor-footer">
+                        <span>₹25,136 Annualized Net Generation Value</span>
+                    </div>
+                </div>
+
+                <!-- 6. Trees Equivalent -->
+                <div class="sensor-card">
+                    <div class="card-header-flex">
+                        <div class="sensor-label-group">
+                            <span class="type-tag" style="color: #10b981;">Ecological Impact</span>
+                            <h3 style="font-size: 0.85rem;">Trees Equivalent</h3>
+                        </div>
+                        <div class="sensor-icon-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                    </div>
+                    <div class="sensor-metric-val">
+                        <span class="value" id="kpiTreesEq">114</span>
+                        <span class="unit">Trees</span>
+                    </div>
+                    <div class="sensor-footer">
+                        <span>Annual Carbon Sequestration Factor</span>
+                    </div>
+                </div>
+
+                <!-- 7. Payback Period -->
+                <div class="sensor-card">
+                    <div class="card-header-flex">
+                        <div class="sensor-label-group">
+                            <span class="type-tag">CapEx Amortization</span>
+                            <h3 style="font-size: 0.85rem;">Payback Period</h3>
+                        </div>
+                        <div class="sensor-icon-badge">
+                            <i class="fas fa-hourglass-half"></i>
+                        </div>
+                    </div>
+                    <div class="sensor-metric-val">
+                        <span class="value" id="kpiPayback">3.38 Yrs</span>
+                    </div>
+                    <div class="sensor-footer">
+                        <span>Down from 6.8 Yrs via Smart Dispatch</span>
+                    </div>
+                </div>
+
+                <!-- 8. 5-Year Capital ROI -->
+                <div class="sensor-card">
+                    <div class="card-header-flex">
+                        <div class="sensor-label-group">
+                            <span class="type-tag" style="color: var(--accent-solar);">Capital Efficiency</span>
+                            <h3 style="font-size: 0.85rem;">5-Year Net ROI</h3>
+                        </div>
+                        <div class="sensor-icon-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-solar);">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                    </div>
+                    <div class="sensor-metric-val">
+                        <span class="value" id="kpiRoi5Year" style="color: var(--accent-solar);">+47.9%</span>
+                    </div>
+                    <div class="sensor-footer">
+                        <span>Net Profit over ₹85,000 Microgrid CapEx</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REAL-TIME DISPATCH FLOW DIAGRAM -->
+            <section class="flow-diagram-card">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <div>
+                        <h3 style="font-size: 1.15rem; color: #ffffff; font-weight: 700;">
+                            <i class="fas fa-diagram-project" style="color: var(--accent-wind);"></i>
+                            <span>Smart Renewable Priority Dispatch Flow</span>
+                        </h3>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">
+                            Live routing logic: Instantaneous Solar DC + Wind DC satisfied first; Main Grid draws only deficit power.
+                        </p>
+                    </div>
+                    <span id="dispatchStateBadge" class="status-tag ok">
+                        <i class="fas fa-bolt"></i> PRIORITY DISPATCH ACTIVE
+                    </span>
+                </div>
+
+                <div class="flow-nodes-grid">
+                    <!-- Column 1: Power Sources -->
+                    <div class="flow-sources-col">
+                        <!-- Solar Node -->
+                        <div class="flow-node-box solar">
+                            <div class="flow-node-info">
+                                <i class="fas fa-solar-panel" style="color: var(--accent-solar);"></i>
+                                <div class="flow-node-meta">
+                                    <h4>Solar PV DC Array</h4>
+                                    <span>0V - 48V DC Bus • MPPT Feed</span>
+                                </div>
+                            </div>
+                            <div class="flow-node-val" style="color: var(--accent-solar);">0.315 kW</div>
+                        </div>
+
+                        <!-- Wind Node -->
+                        <div class="flow-node-box wind">
+                            <div class="flow-node-info">
+                                <i class="fas fa-wind" style="color: var(--accent-wind);"></i>
+                                <div class="flow-node-meta">
+                                    <h4>Wind Micro-Turbine</h4>
+                                    <span>0V - 48V DC Rectified Bus</span>
+                                </div>
+                            </div>
+                            <div class="flow-node-val" style="color: var(--accent-wind);">0.226 kW</div>
+                        </div>
+
+                        <!-- Main Grid Node -->
+                        <div class="flow-node-box grid">
+                            <div class="flow-node-info">
+                                <i class="fas fa-tower-broadcast" style="color: var(--accent-grid);"></i>
+                                <div class="flow-node-meta">
+                                    <h4>Main Municipal Grid</h4>
+                                    <span>200V - 250V AC Deficit Backfill</span>
+                                </div>
+                            </div>
+                            <div class="flow-node-val" id="flowGridVal" style="color: var(--accent-grid);">1.414 kW</div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Center Smart Dispatch Router -->
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div class="flow-connector-line" id="renFlowLine" style="width: 100%; margin-bottom: 8px;"></div>
+                        <div class="flow-router-hub">
+                            <i class="fas fa-shuffle"></i>
+                            <span>EcoShift</span>
+                            <span style="font-size: 0.58rem; color: #94a3b8;">Optimizer</span>
+                        </div>
+                        <div class="flow-connector-line" id="gridFlowLine" style="width: 100%; margin-top: 8px;"></div>
+                    </div>
+
+                    <!-- Column 3: Facility Demand Load -->
+                    <div>
+                        <div class="flow-node-box load" style="height: 100%; display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 2rem;">
+                            <i class="fas fa-industry" style="font-size: 2.2rem; color: #ffffff; margin-bottom: 0.75rem;"></i>
+                            <h4 style="font-size: 1.1rem; color: #ffffff;">Facility Active Demand</h4>
+                            <span style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1rem;">Single-Phase Continuous Consumption</span>
+                            <div class="flow-node-val" id="flowLoadVal" style="font-size: 1.8rem; color: #34d399;">1.955 kW</div>
+                            
+                            <div style="margin-top: 1rem; width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 4px;">
+                                    <span style="color: var(--accent-wind);"><i class="fas fa-circle" style="font-size: 0.6rem;"></i> Renewable: <b id="flowRenUsedVal">27.6%</b></span>
+                                    <span style="color: var(--accent-grid);"><i class="fas fa-circle" style="font-size: 0.6rem;"></i> Grid Deficit: <b>72.4%</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INTERACTIVE SCENARIO & SENSITIVITY CONTROLS -->
+            <section class="ai-controls-grid" style="margin-bottom: 1.5rem;">
+                <div class="ai-deck-card">
+                    <div class="deck-header">
+                        <h3>
+                            <i class="fas fa-sliders" style="color: var(--accent-wind);"></i>
+                            <span>Scenario Stress Testing & ESG Sensitivity</span>
+                        </h3>
+                        <span class="status-tag ok">REAL-TIME RE-CALC</span>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                        <!-- Slider 1: Carbon Credit Market Price -->
+                        <div class="slider-group">
+                            <div class="slider-label-row">
+                                <span class="k">Carbon Credit Price:</span>
+                                <span class="v" id="carbonPriceVal">₹1,500</span>
+                            </div>
+                            <input type="range" class="ai-range-slider" id="carbonPriceSlider" min="800" max="3500" value="1500" step="50" style="accent-color: #eab308;">
+                            <span style="font-size: 0.68rem; color: var(--text-muted);">Simulates Indian Carbon Market (ICM) / Verra voluntary credit pricing.</span>
+                        </div>
+
+                        <!-- Slider 2: Commercial Grid Tariff -->
+                        <div class="slider-group">
+                            <div class="slider-label-row">
+                                <span class="k">Commercial Grid Tariff:</span>
+                                <span class="v" id="tariffVal">₹9.50 / kWh</span>
+                            </div>
+                            <input type="range" class="ai-range-slider" id="tariffSlider" min="7.0" max="15.0" value="9.5" step="0.25" style="accent-color: #38bdf8;">
+                            <span style="font-size: 0.68rem; color: var(--text-muted);">Adjusts municipal thermal electricity billing rates avoided.</span>
+                        </div>
+
+                        <!-- Slider 3: Renewable Capacity Scale -->
+                        <div class="slider-group">
+                            <div class="slider-label-row">
+                                <span class="k">Array Capacity Scale:</span>
+                                <span class="v" id="renScaleVal">100% Array Size</span>
+                            </div>
+                            <input type="range" class="ai-range-slider" id="renScaleSlider" min="50" max="250" value="100" step="10" style="accent-color: #10b981;">
+                            <span style="font-size: 0.68rem; color: var(--text-muted);">Simulates expanding solar PV panels and wind micro-turbines.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CHARTS SECTION: 60-DAY DISPATCH + ROI VELOCITY -->
+            <section style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                <!-- Chart 1: 60-Day Stacked Optimization Dispatch -->
+                <div class="chart-container-card">
+                    <div class="chart-card-header">
+                        <div>
+                            <h3>
+                                <i class="fas fa-chart-area" style="color: var(--accent-wind);"></i>
+                                <span>60-Day Telemetry Dispatch Optimization (5,760 Samples)</span>
+                            </h3>
+                            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">
+                                Green = Clean Energy Utilized; Blue = Grid Shortfall; Dashed Orange = Baseline Uncoordinated Draw.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="height: 310px;">
+                        <canvas id="optimizationChartCanvas"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Cumulative ROI Velocity Curve -->
+                <div class="chart-container-card">
+                    <div class="chart-card-header">
+                        <div>
+                            <h3>
+                                <i class="fas fa-arrow-trend-up" style="color: #eab308;"></i>
+                                <span>Cumulative Financial & ESG Velocity</span>
+                            </h3>
+                            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">
+                                Electricity bill savings (₹) + Verified Carbon Credit revenue monetization.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="height: 310px;">
+                        <canvas id="roiVelocityChartCanvas"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VERIFIED CARBON CREDIT LEDGER TABLE -->
+            <section class="chart-container-card" style="margin-bottom: 2rem;">
+                <div class="chart-card-header">
+                    <div>
+                        <h3>
+                            <i class="fas fa-book" style="color: #eab308;"></i>
+                            <span>Verified Carbon Units (VCU) Ledger & Audit Trail</span>
+                        </h3>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">
+                            Calculated at 15-minute resolution across 60 days of continuous sensor ingest.
+                        </p>
+                    </div>
+                    <span class="status-tag ok"><i class="fas fa-check-double"></i> ISO 14064 COMPLIANT</span>
+                </div>
+
+                <div class="table-responsive" style="max-height: 280px; overflow-y: auto;">
+                    <table class="packet-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Facility Load</th>
+                                <th>Renewable Dispatched</th>
+                                <th>Clean Share %</th>
+                                <th>CO₂ Offset (kg)</th>
+                                <th>Carbon Credits</th>
+                                <th>Net Savings Value</th>
+                                <th>Registry Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="carbonLedgerBody">
+                            <!-- Populated dynamically by optimizer.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+            <div class="footer-team-info">
+                <strong>EcoShift AI</strong>
+                <span>• Team AI Catalysts: Rohit Kumar Mandal, Rahul Singh, Ritik</span>
+                <span>• Tribhuvan College Of Environment & Development Sciences</span>
+            </div>
+            <div>
+                <span>Renewable Dispatch & Carbon ROI Module • InnoVenture 2026</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- OFFICIAL ESG CARBON CREDIT CERTIFICATE MODAL -->
+    <div class="cert-modal-backdrop" id="certModal">
+        <div class="cert-paper">
+            <button class="cert-close-btn" onclick="window.optimizer.closeCertificateModal()">
+                <i class="fas fa-xmark"></i>
+            </button>
+
+            <div class="cert-header-icon">
+                <i class="fas fa-medal"></i>
+            </div>
+            <div class="cert-title">Verified Carbon Offset Certificate</div>
+            <div class="cert-subtitle">EcoShift AI Smart Microgrid Dispatch Protocol</div>
+
+            <p class="cert-body-text">
+                This certifies that the energy optimization algorithms deployed by <br>
+                <strong class="cert-recipient" id="certRecipientName">Rohit Kumar Mandal</strong><br>
+                representing <strong id="certOrgName" style="color: #ffffff;">Tribhuvan College of Environment & Development Sciences</strong><br>
+                have verified and sequestered the following environmental carbon offset:
+            </p>
+
+            <div class="cert-badges-grid">
+                <div class="cert-badge-box">
+                    <span class="k">Carbon Avoided</span>
+                    <span class="v" id="certCreditsVal" style="color: #10b981;">0.407 MT</span>
+                </div>
+                <div class="cert-badge-box">
+                    <span class="k">Clean Energy Dispatched</span>
+                    <span class="v" id="certKwhSavedVal" style="color: #38bdf8;">496 kWh</span>
+                </div>
+                <div class="cert-badge-box">
+                    <span class="k">Verification Standard</span>
+                    <span class="v" style="color: #eab308;">Verra VCS / CEA</span>
+                </div>
+            </div>
+
+            <div class="cert-footer-meta">
+                <div>
+                    <strong>Date Certified:</strong> <span id="certDateStr">September 30, 2026</span>
+                </div>
+                <div>
+                    <strong>Serial Number:</strong> <span id="certSerialNum" style="font-family: var(--font-mono); color: #ffffff;">VER-2026-EC-481920</span>
+                </div>
+                <div>
+                    <strong>Audit Engine:</strong> <span>EcoShift Dispatch AI v2.4</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js?v=20261001_v4"></script>
+    <script src="js/optimizer.js?v=20261001_v4"></script>
+</body>
+</html>

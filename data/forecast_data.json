@@ -1,0 +1,3118 @@
+{
+  "total": {
+    "source_key": "total",
+    "display_name": "Total Factory Load",
+    "historical": [
+      {
+        "date": "2026-08-01",
+        "display_date": "Aug 01",
+        "actual_kwh": 22.82,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-02",
+        "display_date": "Aug 02",
+        "actual_kwh": 29.26,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-03",
+        "display_date": "Aug 03",
+        "actual_kwh": 58.3,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-04",
+        "display_date": "Aug 04",
+        "actual_kwh": 54.91,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-05",
+        "display_date": "Aug 05",
+        "actual_kwh": 57.47,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-06",
+        "display_date": "Aug 06",
+        "actual_kwh": 54.47,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-07",
+        "display_date": "Aug 07",
+        "actual_kwh": 51.09,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-08",
+        "display_date": "Aug 08",
+        "actual_kwh": 26.36,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-09",
+        "display_date": "Aug 09",
+        "actual_kwh": 29.37,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-10",
+        "display_date": "Aug 10",
+        "actual_kwh": 59.13,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-11",
+        "display_date": "Aug 11",
+        "actual_kwh": 57.91,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-12",
+        "display_date": "Aug 12",
+        "actual_kwh": 53.7,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-13",
+        "display_date": "Aug 13",
+        "actual_kwh": 53.48,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-14",
+        "display_date": "Aug 14",
+        "actual_kwh": 49.71,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-15",
+        "display_date": "Aug 15",
+        "actual_kwh": 25.83,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-16",
+        "display_date": "Aug 16",
+        "actual_kwh": 28.33,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-17",
+        "display_date": "Aug 17",
+        "actual_kwh": 58.17,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-18",
+        "display_date": "Aug 18",
+        "actual_kwh": 59.13,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-19",
+        "display_date": "Aug 19",
+        "actual_kwh": 56.82,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-20",
+        "display_date": "Aug 20",
+        "actual_kwh": 51.11,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-21",
+        "display_date": "Aug 21",
+        "actual_kwh": 52.33,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-22",
+        "display_date": "Aug 22",
+        "actual_kwh": 27.04,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-23",
+        "display_date": "Aug 23",
+        "actual_kwh": 28.62,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-24",
+        "display_date": "Aug 24",
+        "actual_kwh": 59.23,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-25",
+        "display_date": "Aug 25",
+        "actual_kwh": 58.3,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-26",
+        "display_date": "Aug 26",
+        "actual_kwh": 56.46,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-27",
+        "display_date": "Aug 27",
+        "actual_kwh": 51.95,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-28",
+        "display_date": "Aug 28",
+        "actual_kwh": 50.36,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-29",
+        "display_date": "Aug 29",
+        "actual_kwh": 25.97,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-30",
+        "display_date": "Aug 30",
+        "actual_kwh": 30.08,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-31",
+        "display_date": "Aug 31",
+        "actual_kwh": 58.93,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-01",
+        "display_date": "Sep 01",
+        "actual_kwh": 59.17,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-02",
+        "display_date": "Sep 02",
+        "actual_kwh": 56.43,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-03",
+        "display_date": "Sep 03",
+        "actual_kwh": 53.96,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-04",
+        "display_date": "Sep 04",
+        "actual_kwh": 52.99,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-05",
+        "display_date": "Sep 05",
+        "actual_kwh": 22.6,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-06",
+        "display_date": "Sep 06",
+        "actual_kwh": 29.3,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-07",
+        "display_date": "Sep 07",
+        "actual_kwh": 59.11,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-08",
+        "display_date": "Sep 08",
+        "actual_kwh": 58.18,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-09",
+        "display_date": "Sep 09",
+        "actual_kwh": 54.62,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-10",
+        "display_date": "Sep 10",
+        "actual_kwh": 54.08,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-11",
+        "display_date": "Sep 11",
+        "actual_kwh": 52.5,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-12",
+        "display_date": "Sep 12",
+        "actual_kwh": 26.55,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-13",
+        "display_date": "Sep 13",
+        "actual_kwh": 26.26,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-14",
+        "display_date": "Sep 14",
+        "actual_kwh": 59.28,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-15",
+        "display_date": "Sep 15",
+        "actual_kwh": 59.09,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-16",
+        "display_date": "Sep 16",
+        "actual_kwh": 55.85,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-17",
+        "display_date": "Sep 17",
+        "actual_kwh": 53.8,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-18",
+        "display_date": "Sep 18",
+        "actual_kwh": 51.93,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-19",
+        "display_date": "Sep 19",
+        "actual_kwh": 26.11,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-20",
+        "display_date": "Sep 20",
+        "actual_kwh": 28.77,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-21",
+        "display_date": "Sep 21",
+        "actual_kwh": 55.75,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-22",
+        "display_date": "Sep 22",
+        "actual_kwh": 56.4,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-23",
+        "display_date": "Sep 23",
+        "actual_kwh": 56.72,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-24",
+        "display_date": "Sep 24",
+        "actual_kwh": 53.47,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-25",
+        "display_date": "Sep 25",
+        "actual_kwh": 51.6,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-26",
+        "display_date": "Sep 26",
+        "actual_kwh": 26.07,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-27",
+        "display_date": "Sep 27",
+        "actual_kwh": 29.34,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-28",
+        "display_date": "Sep 28",
+        "actual_kwh": 58.06,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-29",
+        "display_date": "Sep 29",
+        "actual_kwh": 55.57,
+        "is_weekend": false
+      }
+    ],
+    "forecast": [
+      {
+        "step": 1,
+        "date": "2026-09-30",
+        "display_date": "Sep 30",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 53.28,
+        "upper_95": 56.14,
+        "lower_95": 50.42,
+        "upper_80": 55.15,
+        "lower_80": 51.41,
+        "is_peak_warning": false
+      },
+      {
+        "step": 2,
+        "date": "2026-10-01",
+        "display_date": "Oct 01",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 52.96,
+        "upper_95": 55.87,
+        "lower_95": 50.05,
+        "upper_80": 54.86,
+        "lower_80": 51.06,
+        "is_peak_warning": false
+      },
+      {
+        "step": 3,
+        "date": "2026-10-02",
+        "display_date": "Oct 02",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 51.24,
+        "upper_95": 54.21,
+        "lower_95": 48.27,
+        "upper_80": 53.18,
+        "lower_80": 49.3,
+        "is_peak_warning": false
+      },
+      {
+        "step": 4,
+        "date": "2026-10-03",
+        "display_date": "Oct 03",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 22.06,
+        "upper_95": 25.08,
+        "lower_95": 19.04,
+        "upper_80": 24.03,
+        "lower_80": 20.09,
+        "is_peak_warning": false
+      },
+      {
+        "step": 5,
+        "date": "2026-10-04",
+        "display_date": "Oct 04",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 24.91,
+        "upper_95": 27.98,
+        "lower_95": 21.84,
+        "upper_80": 26.92,
+        "lower_80": 22.9,
+        "is_peak_warning": false
+      },
+      {
+        "step": 6,
+        "date": "2026-10-05",
+        "display_date": "Oct 05",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 56.8,
+        "upper_95": 59.92,
+        "lower_95": 53.68,
+        "upper_80": 58.84,
+        "lower_80": 54.76,
+        "is_peak_warning": false
+      },
+      {
+        "step": 7,
+        "date": "2026-10-06",
+        "display_date": "Oct 06",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 56.27,
+        "upper_95": 59.44,
+        "lower_95": 53.1,
+        "upper_80": 58.34,
+        "lower_80": 54.2,
+        "is_peak_warning": false
+      },
+      {
+        "step": 8,
+        "date": "2026-10-07",
+        "display_date": "Oct 07",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 53.1,
+        "upper_95": 56.32,
+        "lower_95": 49.88,
+        "upper_80": 55.2,
+        "lower_80": 51.0,
+        "is_peak_warning": false
+      },
+      {
+        "step": 9,
+        "date": "2026-10-08",
+        "display_date": "Oct 08",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 53.56,
+        "upper_95": 56.83,
+        "lower_95": 50.29,
+        "upper_80": 55.7,
+        "lower_80": 51.42,
+        "is_peak_warning": false
+      },
+      {
+        "step": 10,
+        "date": "2026-10-09",
+        "display_date": "Oct 09",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 52.66,
+        "upper_95": 55.98,
+        "lower_95": 49.34,
+        "upper_80": 54.83,
+        "lower_80": 50.49,
+        "is_peak_warning": false
+      },
+      {
+        "step": 11,
+        "date": "2026-10-10",
+        "display_date": "Oct 10",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 23.36,
+        "upper_95": 26.72,
+        "lower_95": 20.0,
+        "upper_80": 25.56,
+        "lower_80": 21.16,
+        "is_peak_warning": false
+      },
+      {
+        "step": 12,
+        "date": "2026-10-11",
+        "display_date": "Oct 11",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 25.79,
+        "upper_95": 29.2,
+        "lower_95": 22.38,
+        "upper_80": 28.02,
+        "lower_80": 23.56,
+        "is_peak_warning": false
+      },
+      {
+        "step": 13,
+        "date": "2026-10-12",
+        "display_date": "Oct 12",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 57.71,
+        "upper_95": 61.17,
+        "lower_95": 54.25,
+        "upper_80": 59.97,
+        "lower_80": 55.45,
+        "is_peak_warning": false
+      },
+      {
+        "step": 14,
+        "date": "2026-10-13",
+        "display_date": "Oct 13",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 55.55,
+        "upper_95": 59.05,
+        "lower_95": 52.05,
+        "upper_80": 57.84,
+        "lower_80": 53.26,
+        "is_peak_warning": false
+      },
+      {
+        "step": 15,
+        "date": "2026-10-14",
+        "display_date": "Oct 14",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 51.17,
+        "upper_95": 54.72,
+        "lower_95": 47.62,
+        "upper_80": 53.49,
+        "lower_80": 48.85,
+        "is_peak_warning": false
+      },
+      {
+        "step": 16,
+        "date": "2026-10-15",
+        "display_date": "Oct 15",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 51.12,
+        "upper_95": 54.71,
+        "lower_95": 47.53,
+        "upper_80": 53.47,
+        "lower_80": 48.77,
+        "is_peak_warning": false
+      },
+      {
+        "step": 17,
+        "date": "2026-10-16",
+        "display_date": "Oct 16",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 50.01,
+        "upper_95": 53.64,
+        "lower_95": 46.38,
+        "upper_80": 52.38,
+        "lower_80": 47.64,
+        "is_peak_warning": false
+      },
+      {
+        "step": 18,
+        "date": "2026-10-17",
+        "display_date": "Oct 17",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 19.13,
+        "upper_95": 22.81,
+        "lower_95": 15.45,
+        "upper_80": 21.53,
+        "lower_80": 16.73,
+        "is_peak_warning": false
+      },
+      {
+        "step": 19,
+        "date": "2026-10-18",
+        "display_date": "Oct 18",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 21.84,
+        "upper_95": 25.56,
+        "lower_95": 18.12,
+        "upper_80": 24.27,
+        "lower_80": 19.41,
+        "is_peak_warning": false
+      },
+      {
+        "step": 20,
+        "date": "2026-10-19",
+        "display_date": "Oct 19",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 55.27,
+        "upper_95": 59.03,
+        "lower_95": 51.51,
+        "upper_80": 57.73,
+        "lower_80": 52.81,
+        "is_peak_warning": false
+      },
+      {
+        "step": 21,
+        "date": "2026-10-20",
+        "display_date": "Oct 20",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 54.27,
+        "upper_95": 58.07,
+        "lower_95": 50.47,
+        "upper_80": 56.75,
+        "lower_80": 51.79,
+        "is_peak_warning": false
+      },
+      {
+        "step": 22,
+        "date": "2026-10-21",
+        "display_date": "Oct 21",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 51.16,
+        "upper_95": 55.0,
+        "lower_95": 47.32,
+        "upper_80": 53.67,
+        "lower_80": 48.65,
+        "is_peak_warning": false
+      },
+      {
+        "step": 23,
+        "date": "2026-10-22",
+        "display_date": "Oct 22",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 52.24,
+        "upper_95": 56.13,
+        "lower_95": 48.35,
+        "upper_80": 54.78,
+        "lower_80": 49.7,
+        "is_peak_warning": false
+      },
+      {
+        "step": 24,
+        "date": "2026-10-23",
+        "display_date": "Oct 23",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 52.11,
+        "upper_95": 56.04,
+        "lower_95": 48.18,
+        "upper_80": 54.67,
+        "lower_80": 49.55,
+        "is_peak_warning": false
+      },
+      {
+        "step": 25,
+        "date": "2026-10-24",
+        "display_date": "Oct 24",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 21.09,
+        "upper_95": 25.06,
+        "lower_95": 17.12,
+        "upper_80": 23.68,
+        "lower_80": 18.5,
+        "is_peak_warning": false
+      },
+      {
+        "step": 26,
+        "date": "2026-10-25",
+        "display_date": "Oct 25",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 23.16,
+        "upper_95": 27.16,
+        "lower_95": 19.16,
+        "upper_80": 25.78,
+        "lower_80": 20.54,
+        "is_peak_warning": false
+      },
+      {
+        "step": 27,
+        "date": "2026-10-26",
+        "display_date": "Oct 26",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 56.25,
+        "upper_95": 60.29,
+        "lower_95": 52.21,
+        "upper_80": 58.89,
+        "lower_80": 53.61,
+        "is_peak_warning": false
+      },
+      {
+        "step": 28,
+        "date": "2026-10-27",
+        "display_date": "Oct 27",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 53.18,
+        "upper_95": 57.26,
+        "lower_95": 49.1,
+        "upper_80": 55.85,
+        "lower_80": 50.51,
+        "is_peak_warning": false
+      },
+      {
+        "step": 29,
+        "date": "2026-10-28",
+        "display_date": "Oct 28",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 48.41,
+        "upper_95": 52.53,
+        "lower_95": 44.29,
+        "upper_80": 51.1,
+        "lower_80": 45.72,
+        "is_peak_warning": false
+      },
+      {
+        "step": 30,
+        "date": "2026-10-29",
+        "display_date": "Oct 29",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 48.65,
+        "upper_95": 52.81,
+        "lower_95": 44.49,
+        "upper_80": 51.37,
+        "lower_80": 45.93,
+        "is_peak_warning": false
+      }
+    ],
+    "historical_stats": {
+      "total_kwh": 2820.2,
+      "daily_avg_kwh": 47.0,
+      "min_kwh": 22.6,
+      "max_kwh": 59.28,
+      "peak_day": "Sep 14"
+    },
+    "forecast_stats": {
+      "projected_total_kwh": 1348.31,
+      "projected_daily_avg_kwh": 44.94,
+      "projected_peak_kwh": 57.71,
+      "peak_forecast_date": "Oct 12"
+    },
+    "model_metrics": {
+      "r2_score": 0.988,
+      "mae": 1.13,
+      "rmse": 1.43,
+      "mape_percent": 2.8,
+      "training_samples": 5760,
+      "algorithm": "Scikit-Learn Ridge (Harmonic Fourier Seasonality)"
+    }
+  },
+  "grid": {
+    "source_key": "grid",
+    "display_name": "Main Grid (200-250V AC, 1-16A)",
+    "historical": [
+      {
+        "date": "2026-08-01",
+        "display_date": "Aug 01",
+        "actual_kwh": 19.11,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-02",
+        "display_date": "Aug 02",
+        "actual_kwh": 19.25,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-03",
+        "display_date": "Aug 03",
+        "actual_kwh": 46.65,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-04",
+        "display_date": "Aug 04",
+        "actual_kwh": 46.18,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-05",
+        "display_date": "Aug 05",
+        "actual_kwh": 47.44,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-06",
+        "display_date": "Aug 06",
+        "actual_kwh": 47.46,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-07",
+        "display_date": "Aug 07",
+        "actual_kwh": 45.93,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-08",
+        "display_date": "Aug 08",
+        "actual_kwh": 20.06,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-09",
+        "display_date": "Aug 09",
+        "actual_kwh": 19.65,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-10",
+        "display_date": "Aug 10",
+        "actual_kwh": 47.37,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-11",
+        "display_date": "Aug 11",
+        "actual_kwh": 46.77,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-12",
+        "display_date": "Aug 12",
+        "actual_kwh": 46.62,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-13",
+        "display_date": "Aug 13",
+        "actual_kwh": 46.24,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-14",
+        "display_date": "Aug 14",
+        "actual_kwh": 47.22,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-15",
+        "display_date": "Aug 15",
+        "actual_kwh": 19.12,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-16",
+        "display_date": "Aug 16",
+        "actual_kwh": 19.34,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-17",
+        "display_date": "Aug 17",
+        "actual_kwh": 46.36,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-18",
+        "display_date": "Aug 18",
+        "actual_kwh": 47.29,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-19",
+        "display_date": "Aug 19",
+        "actual_kwh": 47.27,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-20",
+        "display_date": "Aug 20",
+        "actual_kwh": 46.84,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-21",
+        "display_date": "Aug 21",
+        "actual_kwh": 47.05,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-22",
+        "display_date": "Aug 22",
+        "actual_kwh": 19.89,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-23",
+        "display_date": "Aug 23",
+        "actual_kwh": 18.9,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-24",
+        "display_date": "Aug 24",
+        "actual_kwh": 47.28,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-25",
+        "display_date": "Aug 25",
+        "actual_kwh": 45.96,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-26",
+        "display_date": "Aug 26",
+        "actual_kwh": 46.47,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-27",
+        "display_date": "Aug 27",
+        "actual_kwh": 48.23,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-28",
+        "display_date": "Aug 28",
+        "actual_kwh": 47.96,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-29",
+        "display_date": "Aug 29",
+        "actual_kwh": 19.25,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-30",
+        "display_date": "Aug 30",
+        "actual_kwh": 20.07,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-31",
+        "display_date": "Aug 31",
+        "actual_kwh": 47.32,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-01",
+        "display_date": "Sep 01",
+        "actual_kwh": 47.77,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-02",
+        "display_date": "Sep 02",
+        "actual_kwh": 46.39,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-03",
+        "display_date": "Sep 03",
+        "actual_kwh": 47.13,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-04",
+        "display_date": "Sep 04",
+        "actual_kwh": 47.73,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-05",
+        "display_date": "Sep 05",
+        "actual_kwh": 19.04,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-06",
+        "display_date": "Sep 06",
+        "actual_kwh": 19.6,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-07",
+        "display_date": "Sep 07",
+        "actual_kwh": 47.18,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-08",
+        "display_date": "Sep 08",
+        "actual_kwh": 47.28,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-09",
+        "display_date": "Sep 09",
+        "actual_kwh": 47.72,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-10",
+        "display_date": "Sep 10",
+        "actual_kwh": 47.12,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-11",
+        "display_date": "Sep 11",
+        "actual_kwh": 47.23,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-12",
+        "display_date": "Sep 12",
+        "actual_kwh": 19.55,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-13",
+        "display_date": "Sep 13",
+        "actual_kwh": 19.67,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-14",
+        "display_date": "Sep 14",
+        "actual_kwh": 47.13,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-15",
+        "display_date": "Sep 15",
+        "actual_kwh": 47.22,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-16",
+        "display_date": "Sep 16",
+        "actual_kwh": 46.94,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-17",
+        "display_date": "Sep 17",
+        "actual_kwh": 46.89,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-18",
+        "display_date": "Sep 18",
+        "actual_kwh": 46.55,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-19",
+        "display_date": "Sep 19",
+        "actual_kwh": 18.88,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-20",
+        "display_date": "Sep 20",
+        "actual_kwh": 19.31,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-21",
+        "display_date": "Sep 21",
+        "actual_kwh": 47.13,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-22",
+        "display_date": "Sep 22",
+        "actual_kwh": 47.04,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-23",
+        "display_date": "Sep 23",
+        "actual_kwh": 46.94,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-24",
+        "display_date": "Sep 24",
+        "actual_kwh": 47.01,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-25",
+        "display_date": "Sep 25",
+        "actual_kwh": 46.38,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-26",
+        "display_date": "Sep 26",
+        "actual_kwh": 19.41,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-27",
+        "display_date": "Sep 27",
+        "actual_kwh": 19.42,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-28",
+        "display_date": "Sep 28",
+        "actual_kwh": 46.93,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-29",
+        "display_date": "Sep 29",
+        "actual_kwh": 47.02,
+        "is_weekend": false
+      }
+    ],
+    "forecast": [
+      {
+        "step": 1,
+        "date": "2026-09-30",
+        "display_date": "Sep 30",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 44.73,
+        "upper_95": 46.75,
+        "lower_95": 42.71,
+        "upper_80": 46.05,
+        "lower_80": 43.41,
+        "is_peak_warning": false
+      },
+      {
+        "step": 2,
+        "date": "2026-10-01",
+        "display_date": "Oct 01",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 46.76,
+        "upper_95": 48.82,
+        "lower_95": 44.7,
+        "upper_80": 48.1,
+        "lower_80": 45.42,
+        "is_peak_warning": false
+      },
+      {
+        "step": 3,
+        "date": "2026-10-02",
+        "display_date": "Oct 02",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 46.66,
+        "upper_95": 48.76,
+        "lower_95": 44.56,
+        "upper_80": 48.03,
+        "lower_80": 45.29,
+        "is_peak_warning": false
+      },
+      {
+        "step": 4,
+        "date": "2026-10-03",
+        "display_date": "Oct 03",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 16.78,
+        "upper_95": 18.91,
+        "lower_95": 14.65,
+        "upper_80": 18.17,
+        "lower_80": 15.39,
+        "is_peak_warning": false
+      },
+      {
+        "step": 5,
+        "date": "2026-10-04",
+        "display_date": "Oct 04",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 16.94,
+        "upper_95": 19.11,
+        "lower_95": 14.77,
+        "upper_80": 18.36,
+        "lower_80": 15.52,
+        "is_peak_warning": false
+      },
+      {
+        "step": 6,
+        "date": "2026-10-05",
+        "display_date": "Oct 05",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 47.34,
+        "upper_95": 49.55,
+        "lower_95": 45.13,
+        "upper_80": 48.78,
+        "lower_80": 45.9,
+        "is_peak_warning": false
+      },
+      {
+        "step": 7,
+        "date": "2026-10-06",
+        "display_date": "Oct 06",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 46.83,
+        "upper_95": 49.07,
+        "lower_95": 44.59,
+        "upper_80": 48.29,
+        "lower_80": 45.37,
+        "is_peak_warning": false
+      },
+      {
+        "step": 8,
+        "date": "2026-10-07",
+        "display_date": "Oct 07",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 44.93,
+        "upper_95": 47.21,
+        "lower_95": 42.65,
+        "upper_80": 46.42,
+        "lower_80": 43.44,
+        "is_peak_warning": false
+      },
+      {
+        "step": 9,
+        "date": "2026-10-08",
+        "display_date": "Oct 08",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 47.56,
+        "upper_95": 49.87,
+        "lower_95": 45.25,
+        "upper_80": 49.07,
+        "lower_80": 46.05,
+        "is_peak_warning": false
+      },
+      {
+        "step": 10,
+        "date": "2026-10-09",
+        "display_date": "Oct 09",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 47.86,
+        "upper_95": 50.2,
+        "lower_95": 45.52,
+        "upper_80": 49.39,
+        "lower_80": 46.33,
+        "is_peak_warning": false
+      },
+      {
+        "step": 11,
+        "date": "2026-10-10",
+        "display_date": "Oct 10",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 17.05,
+        "upper_95": 19.43,
+        "lower_95": 14.67,
+        "upper_80": 18.6,
+        "lower_80": 15.5,
+        "is_peak_warning": false
+      },
+      {
+        "step": 12,
+        "date": "2026-10-11",
+        "display_date": "Oct 11",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 16.96,
+        "upper_95": 19.37,
+        "lower_95": 14.55,
+        "upper_80": 18.53,
+        "lower_80": 15.39,
+        "is_peak_warning": false
+      },
+      {
+        "step": 13,
+        "date": "2026-10-12",
+        "display_date": "Oct 12",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 47.51,
+        "upper_95": 49.95,
+        "lower_95": 45.07,
+        "upper_80": 49.11,
+        "lower_80": 45.91,
+        "is_peak_warning": false
+      },
+      {
+        "step": 14,
+        "date": "2026-10-13",
+        "display_date": "Oct 13",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 46.09,
+        "upper_95": 48.56,
+        "lower_95": 43.62,
+        "upper_80": 47.71,
+        "lower_80": 44.47,
+        "is_peak_warning": false
+      },
+      {
+        "step": 15,
+        "date": "2026-10-14",
+        "display_date": "Oct 14",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 43.33,
+        "upper_95": 45.84,
+        "lower_95": 40.82,
+        "upper_80": 44.97,
+        "lower_80": 41.69,
+        "is_peak_warning": false
+      },
+      {
+        "step": 16,
+        "date": "2026-10-15",
+        "display_date": "Oct 15",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 45.59,
+        "upper_95": 48.13,
+        "lower_95": 43.05,
+        "upper_80": 47.25,
+        "lower_80": 43.93,
+        "is_peak_warning": false
+      },
+      {
+        "step": 17,
+        "date": "2026-10-16",
+        "display_date": "Oct 16",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 46.15,
+        "upper_95": 48.72,
+        "lower_95": 43.58,
+        "upper_80": 47.83,
+        "lower_80": 44.47,
+        "is_peak_warning": false
+      },
+      {
+        "step": 18,
+        "date": "2026-10-17",
+        "display_date": "Oct 17",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 14.74,
+        "upper_95": 17.34,
+        "lower_95": 12.14,
+        "upper_80": 16.44,
+        "lower_80": 13.04,
+        "is_peak_warning": false
+      },
+      {
+        "step": 19,
+        "date": "2026-10-18",
+        "display_date": "Oct 18",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 14.94,
+        "upper_95": 17.57,
+        "lower_95": 12.31,
+        "upper_80": 16.66,
+        "lower_80": 13.22,
+        "is_peak_warning": false
+      },
+      {
+        "step": 20,
+        "date": "2026-10-19",
+        "display_date": "Oct 19",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 46.92,
+        "upper_95": 49.58,
+        "lower_95": 44.26,
+        "upper_80": 48.66,
+        "lower_80": 45.18,
+        "is_peak_warning": false
+      },
+      {
+        "step": 21,
+        "date": "2026-10-20",
+        "display_date": "Oct 20",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 45.81,
+        "upper_95": 48.5,
+        "lower_95": 43.12,
+        "upper_80": 47.57,
+        "lower_80": 44.05,
+        "is_peak_warning": false
+      },
+      {
+        "step": 22,
+        "date": "2026-10-21",
+        "display_date": "Oct 21",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 43.68,
+        "upper_95": 46.4,
+        "lower_95": 40.96,
+        "upper_80": 45.45,
+        "lower_80": 41.91,
+        "is_peak_warning": false
+      },
+      {
+        "step": 23,
+        "date": "2026-10-22",
+        "display_date": "Oct 22",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 46.66,
+        "upper_95": 49.41,
+        "lower_95": 43.91,
+        "upper_80": 48.45,
+        "lower_80": 44.87,
+        "is_peak_warning": false
+      },
+      {
+        "step": 24,
+        "date": "2026-10-23",
+        "display_date": "Oct 23",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 47.65,
+        "upper_95": 50.42,
+        "lower_95": 44.88,
+        "upper_80": 49.46,
+        "lower_80": 45.84,
+        "is_peak_warning": false
+      },
+      {
+        "step": 25,
+        "date": "2026-10-24",
+        "display_date": "Oct 24",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 15.25,
+        "upper_95": 18.05,
+        "lower_95": 12.45,
+        "upper_80": 17.08,
+        "lower_80": 13.42,
+        "is_peak_warning": false
+      },
+      {
+        "step": 26,
+        "date": "2026-10-25",
+        "display_date": "Oct 25",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 15.03,
+        "upper_95": 17.86,
+        "lower_95": 12.2,
+        "upper_80": 16.88,
+        "lower_80": 13.18,
+        "is_peak_warning": false
+      },
+      {
+        "step": 27,
+        "date": "2026-10-26",
+        "display_date": "Oct 26",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 46.98,
+        "upper_95": 49.84,
+        "lower_95": 44.12,
+        "upper_80": 48.85,
+        "lower_80": 45.11,
+        "is_peak_warning": false
+      },
+      {
+        "step": 28,
+        "date": "2026-10-27",
+        "display_date": "Oct 27",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 44.72,
+        "upper_95": 47.61,
+        "lower_95": 41.83,
+        "upper_80": 46.6,
+        "lower_80": 42.84,
+        "is_peak_warning": false
+      },
+      {
+        "step": 29,
+        "date": "2026-10-28",
+        "display_date": "Oct 28",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 41.54,
+        "upper_95": 44.45,
+        "lower_95": 38.63,
+        "upper_80": 43.44,
+        "lower_80": 39.64,
+        "is_peak_warning": false
+      },
+      {
+        "step": 30,
+        "date": "2026-10-29",
+        "display_date": "Oct 29",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 44.03,
+        "upper_95": 46.97,
+        "lower_95": 41.09,
+        "upper_80": 45.95,
+        "lower_80": 42.11,
+        "is_peak_warning": false
+      }
+    ],
+    "historical_stats": {
+      "total_kwh": 2324.17,
+      "daily_avg_kwh": 38.74,
+      "min_kwh": 18.88,
+      "max_kwh": 48.23,
+      "peak_day": "Aug 27"
+    },
+    "forecast_stats": {
+      "projected_total_kwh": 1137.02,
+      "projected_daily_avg_kwh": 37.9,
+      "projected_peak_kwh": 47.86,
+      "peak_forecast_date": "Oct 09"
+    },
+    "model_metrics": {
+      "r2_score": 0.994,
+      "mae": 0.82,
+      "rmse": 1.01,
+      "mape_percent": 2.52,
+      "training_samples": 5760,
+      "algorithm": "Scikit-Learn Ridge (Harmonic Fourier Seasonality)"
+    }
+  },
+  "solar": {
+    "source_key": "solar",
+    "display_name": "Solar Array (0-48V DC, 0-16A)",
+    "historical": [
+      {
+        "date": "2026-08-01",
+        "display_date": "Aug 01",
+        "actual_kwh": 1.48,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-02",
+        "display_date": "Aug 02",
+        "actual_kwh": 4.32,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-03",
+        "display_date": "Aug 03",
+        "actual_kwh": 4.32,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-04",
+        "display_date": "Aug 04",
+        "actual_kwh": 1.45,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-05",
+        "display_date": "Aug 05",
+        "actual_kwh": 4.33,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-06",
+        "display_date": "Aug 06",
+        "actual_kwh": 4.23,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-07",
+        "display_date": "Aug 07",
+        "actual_kwh": 4.31,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-08",
+        "display_date": "Aug 08",
+        "actual_kwh": 4.28,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-09",
+        "display_date": "Aug 09",
+        "actual_kwh": 4.26,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-10",
+        "display_date": "Aug 10",
+        "actual_kwh": 4.3,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-11",
+        "display_date": "Aug 11",
+        "actual_kwh": 4.25,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-12",
+        "display_date": "Aug 12",
+        "actual_kwh": 1.5,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-13",
+        "display_date": "Aug 13",
+        "actual_kwh": 4.31,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-14",
+        "display_date": "Aug 14",
+        "actual_kwh": 1.52,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-15",
+        "display_date": "Aug 15",
+        "actual_kwh": 4.34,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-16",
+        "display_date": "Aug 16",
+        "actual_kwh": 4.29,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-17",
+        "display_date": "Aug 17",
+        "actual_kwh": 4.35,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-18",
+        "display_date": "Aug 18",
+        "actual_kwh": 4.31,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-19",
+        "display_date": "Aug 19",
+        "actual_kwh": 4.33,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-20",
+        "display_date": "Aug 20",
+        "actual_kwh": 1.48,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-21",
+        "display_date": "Aug 21",
+        "actual_kwh": 4.3,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-22",
+        "display_date": "Aug 22",
+        "actual_kwh": 4.38,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-23",
+        "display_date": "Aug 23",
+        "actual_kwh": 4.34,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-24",
+        "display_date": "Aug 24",
+        "actual_kwh": 4.34,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-25",
+        "display_date": "Aug 25",
+        "actual_kwh": 4.31,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-26",
+        "display_date": "Aug 26",
+        "actual_kwh": 4.31,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-27",
+        "display_date": "Aug 27",
+        "actual_kwh": 1.47,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-28",
+        "display_date": "Aug 28",
+        "actual_kwh": 1.47,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-29",
+        "display_date": "Aug 29",
+        "actual_kwh": 4.35,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-30",
+        "display_date": "Aug 30",
+        "actual_kwh": 4.26,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-31",
+        "display_date": "Aug 31",
+        "actual_kwh": 4.32,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-01",
+        "display_date": "Sep 01",
+        "actual_kwh": 4.24,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-02",
+        "display_date": "Sep 02",
+        "actual_kwh": 4.3,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-03",
+        "display_date": "Sep 03",
+        "actual_kwh": 4.32,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-04",
+        "display_date": "Sep 04",
+        "actual_kwh": 4.32,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-05",
+        "display_date": "Sep 05",
+        "actual_kwh": 1.45,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-06",
+        "display_date": "Sep 06",
+        "actual_kwh": 4.34,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-07",
+        "display_date": "Sep 07",
+        "actual_kwh": 4.28,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-08",
+        "display_date": "Sep 08",
+        "actual_kwh": 4.29,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-09",
+        "display_date": "Sep 09",
+        "actual_kwh": 1.46,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-10",
+        "display_date": "Sep 10",
+        "actual_kwh": 4.23,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-11",
+        "display_date": "Sep 11",
+        "actual_kwh": 4.26,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-12",
+        "display_date": "Sep 12",
+        "actual_kwh": 4.36,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-13",
+        "display_date": "Sep 13",
+        "actual_kwh": 1.47,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-14",
+        "display_date": "Sep 14",
+        "actual_kwh": 4.27,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-15",
+        "display_date": "Sep 15",
+        "actual_kwh": 4.27,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-16",
+        "display_date": "Sep 16",
+        "actual_kwh": 4.24,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-17",
+        "display_date": "Sep 17",
+        "actual_kwh": 4.39,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-18",
+        "display_date": "Sep 18",
+        "actual_kwh": 4.26,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-19",
+        "display_date": "Sep 19",
+        "actual_kwh": 4.28,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-20",
+        "display_date": "Sep 20",
+        "actual_kwh": 4.32,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-21",
+        "display_date": "Sep 21",
+        "actual_kwh": 1.48,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-22",
+        "display_date": "Sep 22",
+        "actual_kwh": 1.48,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-23",
+        "display_date": "Sep 23",
+        "actual_kwh": 4.32,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-24",
+        "display_date": "Sep 24",
+        "actual_kwh": 4.35,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-25",
+        "display_date": "Sep 25",
+        "actual_kwh": 4.31,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-26",
+        "display_date": "Sep 26",
+        "actual_kwh": 4.31,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-27",
+        "display_date": "Sep 27",
+        "actual_kwh": 4.32,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-28",
+        "display_date": "Sep 28",
+        "actual_kwh": 4.28,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-29",
+        "display_date": "Sep 29",
+        "actual_kwh": 1.52,
+        "is_weekend": false
+      }
+    ],
+    "forecast": [
+      {
+        "step": 1,
+        "date": "2026-09-30",
+        "display_date": "Sep 30",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 3.55,
+        "upper_95": 5.56,
+        "lower_95": 1.54,
+        "upper_80": 4.86,
+        "lower_80": 2.24,
+        "is_peak_warning": false
+      },
+      {
+        "step": 2,
+        "date": "2026-10-01",
+        "display_date": "Oct 01",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 4.21,
+        "upper_95": 6.26,
+        "lower_95": 2.16,
+        "upper_80": 5.55,
+        "lower_80": 2.87,
+        "is_peak_warning": false
+      },
+      {
+        "step": 3,
+        "date": "2026-10-02",
+        "display_date": "Oct 02",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 4.07,
+        "upper_95": 6.16,
+        "lower_95": 1.98,
+        "upper_80": 5.43,
+        "lower_80": 2.71,
+        "is_peak_warning": false
+      },
+      {
+        "step": 4,
+        "date": "2026-10-03",
+        "display_date": "Oct 03",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 2.93,
+        "upper_95": 5.05,
+        "lower_95": 0.81,
+        "upper_80": 4.32,
+        "lower_80": 1.54,
+        "is_peak_warning": false
+      },
+      {
+        "step": 5,
+        "date": "2026-10-04",
+        "display_date": "Oct 04",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 2.36,
+        "upper_95": 4.52,
+        "lower_95": 0.5,
+        "upper_80": 3.77,
+        "lower_80": 0.95,
+        "is_peak_warning": false
+      },
+      {
+        "step": 6,
+        "date": "2026-10-05",
+        "display_date": "Oct 05",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 1.93,
+        "upper_95": 4.13,
+        "lower_95": 0.5,
+        "upper_80": 3.36,
+        "lower_80": 0.5,
+        "is_peak_warning": false
+      },
+      {
+        "step": 7,
+        "date": "2026-10-06",
+        "display_date": "Oct 06",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 1.93,
+        "upper_95": 4.16,
+        "lower_95": 0.5,
+        "upper_80": 3.39,
+        "lower_80": 0.5,
+        "is_peak_warning": false
+      },
+      {
+        "step": 8,
+        "date": "2026-10-07",
+        "display_date": "Oct 07",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 2.94,
+        "upper_95": 5.21,
+        "lower_95": 0.67,
+        "upper_80": 4.42,
+        "lower_80": 1.46,
+        "is_peak_warning": false
+      },
+      {
+        "step": 9,
+        "date": "2026-10-08",
+        "display_date": "Oct 08",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 3.99,
+        "upper_95": 6.29,
+        "lower_95": 1.69,
+        "upper_80": 5.49,
+        "lower_80": 2.49,
+        "is_peak_warning": false
+      },
+      {
+        "step": 10,
+        "date": "2026-10-09",
+        "display_date": "Oct 09",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 4.45,
+        "upper_95": 6.78,
+        "lower_95": 2.12,
+        "upper_80": 5.97,
+        "lower_80": 2.93,
+        "is_peak_warning": false
+      },
+      {
+        "step": 11,
+        "date": "2026-10-10",
+        "display_date": "Oct 10",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 4.2,
+        "upper_95": 6.57,
+        "lower_95": 1.83,
+        "upper_80": 5.75,
+        "lower_80": 2.65,
+        "is_peak_warning": false
+      },
+      {
+        "step": 12,
+        "date": "2026-10-11",
+        "display_date": "Oct 11",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 3.45,
+        "upper_95": 5.85,
+        "lower_95": 1.05,
+        "upper_80": 5.02,
+        "lower_80": 1.88,
+        "is_peak_warning": false
+      },
+      {
+        "step": 13,
+        "date": "2026-10-12",
+        "display_date": "Oct 12",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 2.99,
+        "upper_95": 5.42,
+        "lower_95": 0.56,
+        "upper_80": 4.58,
+        "lower_80": 1.4,
+        "is_peak_warning": false
+      },
+      {
+        "step": 14,
+        "date": "2026-10-13",
+        "display_date": "Oct 13",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 2.39,
+        "upper_95": 4.85,
+        "lower_95": 0.5,
+        "upper_80": 4.0,
+        "lower_80": 0.78,
+        "is_peak_warning": false
+      },
+      {
+        "step": 15,
+        "date": "2026-10-14",
+        "display_date": "Oct 14",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 3.07,
+        "upper_95": 5.56,
+        "lower_95": 0.58,
+        "upper_80": 4.7,
+        "lower_80": 1.44,
+        "is_peak_warning": false
+      },
+      {
+        "step": 16,
+        "date": "2026-10-15",
+        "display_date": "Oct 15",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 3.9,
+        "upper_95": 6.43,
+        "lower_95": 1.37,
+        "upper_80": 5.55,
+        "lower_80": 2.25,
+        "is_peak_warning": false
+      },
+      {
+        "step": 17,
+        "date": "2026-10-16",
+        "display_date": "Oct 16",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 3.72,
+        "upper_95": 6.28,
+        "lower_95": 1.16,
+        "upper_80": 5.39,
+        "lower_80": 2.05,
+        "is_peak_warning": false
+      },
+      {
+        "step": 18,
+        "date": "2026-10-17",
+        "display_date": "Oct 17",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 2.2,
+        "upper_95": 4.79,
+        "lower_95": 0.5,
+        "upper_80": 3.89,
+        "lower_80": 0.51,
+        "is_peak_warning": false
+      },
+      {
+        "step": 19,
+        "date": "2026-10-18",
+        "display_date": "Oct 18",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 1.29,
+        "upper_95": 3.91,
+        "lower_95": 0.5,
+        "upper_80": 3.0,
+        "lower_80": 0.5,
+        "is_peak_warning": false
+      },
+      {
+        "step": 20,
+        "date": "2026-10-19",
+        "display_date": "Oct 19",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 1.0,
+        "upper_95": 3.65,
+        "lower_95": 0.5,
+        "upper_80": 2.73,
+        "lower_80": 0.5,
+        "is_peak_warning": false
+      },
+      {
+        "step": 21,
+        "date": "2026-10-20",
+        "display_date": "Oct 20",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 1.01,
+        "upper_95": 3.68,
+        "lower_95": 0.5,
+        "upper_80": 2.76,
+        "lower_80": 0.5,
+        "is_peak_warning": false
+      },
+      {
+        "step": 22,
+        "date": "2026-10-21",
+        "display_date": "Oct 21",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 2.44,
+        "upper_95": 5.14,
+        "lower_95": 0.5,
+        "upper_80": 4.21,
+        "lower_80": 0.67,
+        "is_peak_warning": false
+      },
+      {
+        "step": 23,
+        "date": "2026-10-22",
+        "display_date": "Oct 22",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 3.91,
+        "upper_95": 6.64,
+        "lower_95": 1.18,
+        "upper_80": 5.69,
+        "lower_80": 2.13,
+        "is_peak_warning": false
+      },
+      {
+        "step": 24,
+        "date": "2026-10-23",
+        "display_date": "Oct 23",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 4.52,
+        "upper_95": 7.28,
+        "lower_95": 1.76,
+        "upper_80": 6.32,
+        "lower_80": 2.72,
+        "is_peak_warning": false
+      },
+      {
+        "step": 25,
+        "date": "2026-10-24",
+        "display_date": "Oct 24",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 3.96,
+        "upper_95": 6.75,
+        "lower_95": 1.17,
+        "upper_80": 5.78,
+        "lower_80": 2.14,
+        "is_peak_warning": false
+      },
+      {
+        "step": 26,
+        "date": "2026-10-25",
+        "display_date": "Oct 25",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 2.85,
+        "upper_95": 5.67,
+        "lower_95": 0.5,
+        "upper_80": 4.69,
+        "lower_80": 1.01,
+        "is_peak_warning": false
+      },
+      {
+        "step": 27,
+        "date": "2026-10-26",
+        "display_date": "Oct 26",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 2.21,
+        "upper_95": 5.05,
+        "lower_95": 0.5,
+        "upper_80": 4.07,
+        "lower_80": 0.5,
+        "is_peak_warning": false
+      },
+      {
+        "step": 28,
+        "date": "2026-10-27",
+        "display_date": "Oct 27",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 1.56,
+        "upper_95": 4.43,
+        "lower_95": 0.5,
+        "upper_80": 3.43,
+        "lower_80": 0.5,
+        "is_peak_warning": false
+      },
+      {
+        "step": 29,
+        "date": "2026-10-28",
+        "display_date": "Oct 28",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 2.4,
+        "upper_95": 5.3,
+        "lower_95": 0.5,
+        "upper_80": 4.29,
+        "lower_80": 0.51,
+        "is_peak_warning": false
+      },
+      {
+        "step": 30,
+        "date": "2026-10-29",
+        "display_date": "Oct 29",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 3.4,
+        "upper_95": 6.32,
+        "lower_95": 0.5,
+        "upper_80": 5.31,
+        "lower_80": 1.49,
+        "is_peak_warning": false
+      }
+    ],
+    "historical_stats": {
+      "total_kwh": 221.52,
+      "daily_avg_kwh": 3.69,
+      "min_kwh": 1.45,
+      "max_kwh": 4.39,
+      "peak_day": "Sep 17"
+    },
+    "forecast_stats": {
+      "projected_total_kwh": 88.83,
+      "projected_daily_avg_kwh": 2.96,
+      "projected_peak_kwh": 4.52,
+      "peak_forecast_date": "Oct 23"
+    },
+    "model_metrics": {
+      "r2_score": 0.81,
+      "mae": 0.77,
+      "rmse": 1.01,
+      "mape_percent": 34.53,
+      "training_samples": 5760,
+      "algorithm": "Scikit-Learn Ridge (Harmonic Fourier Seasonality)"
+    }
+  },
+  "wind": {
+    "source_key": "wind",
+    "display_name": "Wind Turbines (0-48V DC, 0-16A)",
+    "historical": [
+      {
+        "date": "2026-08-01",
+        "display_date": "Aug 01",
+        "actual_kwh": 2.23,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-02",
+        "display_date": "Aug 02",
+        "actual_kwh": 5.68,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-03",
+        "display_date": "Aug 03",
+        "actual_kwh": 7.32,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-04",
+        "display_date": "Aug 04",
+        "actual_kwh": 7.28,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-05",
+        "display_date": "Aug 05",
+        "actual_kwh": 5.69,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-06",
+        "display_date": "Aug 06",
+        "actual_kwh": 2.78,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-07",
+        "display_date": "Aug 07",
+        "actual_kwh": 0.85,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-08",
+        "display_date": "Aug 08",
+        "actual_kwh": 2.03,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-09",
+        "display_date": "Aug 09",
+        "actual_kwh": 5.46,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-10",
+        "display_date": "Aug 10",
+        "actual_kwh": 7.45,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-11",
+        "display_date": "Aug 11",
+        "actual_kwh": 6.89,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-12",
+        "display_date": "Aug 12",
+        "actual_kwh": 5.57,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-13",
+        "display_date": "Aug 13",
+        "actual_kwh": 2.93,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-14",
+        "display_date": "Aug 14",
+        "actual_kwh": 0.97,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-15",
+        "display_date": "Aug 15",
+        "actual_kwh": 2.37,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-16",
+        "display_date": "Aug 16",
+        "actual_kwh": 4.71,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-17",
+        "display_date": "Aug 17",
+        "actual_kwh": 7.47,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-18",
+        "display_date": "Aug 18",
+        "actual_kwh": 7.53,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-19",
+        "display_date": "Aug 19",
+        "actual_kwh": 5.22,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-20",
+        "display_date": "Aug 20",
+        "actual_kwh": 2.79,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-21",
+        "display_date": "Aug 21",
+        "actual_kwh": 0.98,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-22",
+        "display_date": "Aug 22",
+        "actual_kwh": 2.77,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-23",
+        "display_date": "Aug 23",
+        "actual_kwh": 5.38,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-24",
+        "display_date": "Aug 24",
+        "actual_kwh": 7.61,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-25",
+        "display_date": "Aug 25",
+        "actual_kwh": 8.03,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-26",
+        "display_date": "Aug 26",
+        "actual_kwh": 5.68,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-27",
+        "display_date": "Aug 27",
+        "actual_kwh": 2.25,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-28",
+        "display_date": "Aug 28",
+        "actual_kwh": 0.94,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-08-29",
+        "display_date": "Aug 29",
+        "actual_kwh": 2.37,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-30",
+        "display_date": "Aug 30",
+        "actual_kwh": 5.76,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-08-31",
+        "display_date": "Aug 31",
+        "actual_kwh": 7.3,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-01",
+        "display_date": "Sep 01",
+        "actual_kwh": 7.16,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-02",
+        "display_date": "Sep 02",
+        "actual_kwh": 5.73,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-03",
+        "display_date": "Sep 03",
+        "actual_kwh": 2.51,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-04",
+        "display_date": "Sep 04",
+        "actual_kwh": 0.93,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-05",
+        "display_date": "Sep 05",
+        "actual_kwh": 2.11,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-06",
+        "display_date": "Sep 06",
+        "actual_kwh": 5.35,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-07",
+        "display_date": "Sep 07",
+        "actual_kwh": 7.65,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-08",
+        "display_date": "Sep 08",
+        "actual_kwh": 6.62,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-09",
+        "display_date": "Sep 09",
+        "actual_kwh": 5.44,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-10",
+        "display_date": "Sep 10",
+        "actual_kwh": 2.73,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-11",
+        "display_date": "Sep 11",
+        "actual_kwh": 1.01,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-12",
+        "display_date": "Sep 12",
+        "actual_kwh": 2.63,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-13",
+        "display_date": "Sep 13",
+        "actual_kwh": 5.12,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-14",
+        "display_date": "Sep 14",
+        "actual_kwh": 7.88,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-15",
+        "display_date": "Sep 15",
+        "actual_kwh": 7.6,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-16",
+        "display_date": "Sep 16",
+        "actual_kwh": 4.67,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-17",
+        "display_date": "Sep 17",
+        "actual_kwh": 2.51,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-18",
+        "display_date": "Sep 18",
+        "actual_kwh": 1.12,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-19",
+        "display_date": "Sep 19",
+        "actual_kwh": 2.95,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-20",
+        "display_date": "Sep 20",
+        "actual_kwh": 5.14,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-21",
+        "display_date": "Sep 21",
+        "actual_kwh": 7.14,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-22",
+        "display_date": "Sep 22",
+        "actual_kwh": 7.88,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-23",
+        "display_date": "Sep 23",
+        "actual_kwh": 5.46,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-24",
+        "display_date": "Sep 24",
+        "actual_kwh": 2.11,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-25",
+        "display_date": "Sep 25",
+        "actual_kwh": 0.91,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-26",
+        "display_date": "Sep 26",
+        "actual_kwh": 2.36,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-27",
+        "display_date": "Sep 27",
+        "actual_kwh": 5.59,
+        "is_weekend": true
+      },
+      {
+        "date": "2026-09-28",
+        "display_date": "Sep 28",
+        "actual_kwh": 6.86,
+        "is_weekend": false
+      },
+      {
+        "date": "2026-09-29",
+        "display_date": "Sep 29",
+        "actual_kwh": 7.03,
+        "is_weekend": false
+      }
+    ],
+    "forecast": [
+      {
+        "step": 1,
+        "date": "2026-09-30",
+        "display_date": "Sep 30",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 5.01,
+        "upper_95": 5.68,
+        "lower_95": 4.34,
+        "upper_80": 5.44,
+        "lower_80": 4.58,
+        "is_peak_warning": false
+      },
+      {
+        "step": 2,
+        "date": "2026-10-01",
+        "display_date": "Oct 01",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 1.99,
+        "upper_95": 2.67,
+        "lower_95": 1.31,
+        "upper_80": 2.43,
+        "lower_80": 1.55,
+        "is_peak_warning": false
+      },
+      {
+        "step": 3,
+        "date": "2026-10-02",
+        "display_date": "Oct 02",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 1.0,
+        "upper_95": 1.69,
+        "lower_95": 0.5,
+        "upper_80": 1.45,
+        "lower_80": 0.55,
+        "is_peak_warning": false
+      },
+      {
+        "step": 4,
+        "date": "2026-10-03",
+        "display_date": "Oct 03",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 2.34,
+        "upper_95": 3.04,
+        "lower_95": 1.64,
+        "upper_80": 2.8,
+        "lower_80": 1.88,
+        "is_peak_warning": false
+      },
+      {
+        "step": 5,
+        "date": "2026-10-04",
+        "display_date": "Oct 04",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 5.61,
+        "upper_95": 6.32,
+        "lower_95": 4.9,
+        "upper_80": 6.08,
+        "lower_80": 5.14,
+        "is_peak_warning": false
+      },
+      {
+        "step": 6,
+        "date": "2026-10-05",
+        "display_date": "Oct 05",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 7.53,
+        "upper_95": 8.26,
+        "lower_95": 6.8,
+        "upper_80": 8.0,
+        "lower_80": 7.06,
+        "is_peak_warning": true
+      },
+      {
+        "step": 7,
+        "date": "2026-10-06",
+        "display_date": "Oct 06",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 7.5,
+        "upper_95": 8.24,
+        "lower_95": 6.76,
+        "upper_80": 7.98,
+        "lower_80": 7.02,
+        "is_peak_warning": true
+      },
+      {
+        "step": 8,
+        "date": "2026-10-07",
+        "display_date": "Oct 07",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 5.23,
+        "upper_95": 5.98,
+        "lower_95": 4.48,
+        "upper_80": 5.72,
+        "lower_80": 4.74,
+        "is_peak_warning": false
+      },
+      {
+        "step": 9,
+        "date": "2026-10-08",
+        "display_date": "Oct 08",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 2.02,
+        "upper_95": 2.78,
+        "lower_95": 1.26,
+        "upper_80": 2.52,
+        "lower_80": 1.52,
+        "is_peak_warning": false
+      },
+      {
+        "step": 10,
+        "date": "2026-10-09",
+        "display_date": "Oct 09",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 1.0,
+        "upper_95": 1.77,
+        "lower_95": 0.5,
+        "upper_80": 1.5,
+        "lower_80": 0.5,
+        "is_peak_warning": false
+      },
+      {
+        "step": 11,
+        "date": "2026-10-10",
+        "display_date": "Oct 10",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 2.1,
+        "upper_95": 2.88,
+        "lower_95": 1.32,
+        "upper_80": 2.61,
+        "lower_80": 1.59,
+        "is_peak_warning": false
+      },
+      {
+        "step": 12,
+        "date": "2026-10-11",
+        "display_date": "Oct 11",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 5.39,
+        "upper_95": 6.18,
+        "lower_95": 4.6,
+        "upper_80": 5.91,
+        "lower_80": 4.87,
+        "is_peak_warning": false
+      },
+      {
+        "step": 13,
+        "date": "2026-10-12",
+        "display_date": "Oct 12",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 7.21,
+        "upper_95": 8.01,
+        "lower_95": 6.41,
+        "upper_80": 7.74,
+        "lower_80": 6.68,
+        "is_peak_warning": true
+      },
+      {
+        "step": 14,
+        "date": "2026-10-13",
+        "display_date": "Oct 13",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 7.08,
+        "upper_95": 7.89,
+        "lower_95": 6.27,
+        "upper_80": 7.61,
+        "lower_80": 6.55,
+        "is_peak_warning": true
+      },
+      {
+        "step": 15,
+        "date": "2026-10-14",
+        "display_date": "Oct 14",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 4.77,
+        "upper_95": 5.59,
+        "lower_95": 3.95,
+        "upper_80": 5.31,
+        "lower_80": 4.23,
+        "is_peak_warning": false
+      },
+      {
+        "step": 16,
+        "date": "2026-10-15",
+        "display_date": "Oct 15",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 1.63,
+        "upper_95": 2.47,
+        "lower_95": 0.79,
+        "upper_80": 2.18,
+        "lower_80": 1.08,
+        "is_peak_warning": false
+      },
+      {
+        "step": 17,
+        "date": "2026-10-16",
+        "display_date": "Oct 16",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 1.0,
+        "upper_95": 1.85,
+        "lower_95": 0.5,
+        "upper_80": 1.55,
+        "lower_80": 0.5,
+        "is_peak_warning": false
+      },
+      {
+        "step": 18,
+        "date": "2026-10-17",
+        "display_date": "Oct 17",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 2.18,
+        "upper_95": 3.04,
+        "lower_95": 1.32,
+        "upper_80": 2.74,
+        "lower_80": 1.62,
+        "is_peak_warning": false
+      },
+      {
+        "step": 19,
+        "date": "2026-10-18",
+        "display_date": "Oct 18",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 5.61,
+        "upper_95": 6.48,
+        "lower_95": 4.74,
+        "upper_80": 6.17,
+        "lower_80": 5.05,
+        "is_peak_warning": false
+      },
+      {
+        "step": 20,
+        "date": "2026-10-19",
+        "display_date": "Oct 19",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 7.52,
+        "upper_95": 8.39,
+        "lower_95": 6.65,
+        "upper_80": 8.09,
+        "lower_80": 6.95,
+        "is_peak_warning": true
+      },
+      {
+        "step": 21,
+        "date": "2026-10-20",
+        "display_date": "Oct 20",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 7.45,
+        "upper_95": 8.33,
+        "lower_95": 6.57,
+        "upper_80": 8.03,
+        "lower_80": 6.87,
+        "is_peak_warning": true
+      },
+      {
+        "step": 22,
+        "date": "2026-10-21",
+        "display_date": "Oct 21",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 5.04,
+        "upper_95": 5.93,
+        "lower_95": 4.15,
+        "upper_80": 5.62,
+        "lower_80": 4.46,
+        "is_peak_warning": false
+      },
+      {
+        "step": 23,
+        "date": "2026-10-22",
+        "display_date": "Oct 22",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 1.68,
+        "upper_95": 2.58,
+        "lower_95": 0.78,
+        "upper_80": 2.27,
+        "lower_80": 1.09,
+        "is_peak_warning": false
+      },
+      {
+        "step": 24,
+        "date": "2026-10-23",
+        "display_date": "Oct 23",
+        "day_of_week": 4,
+        "is_weekend": false,
+        "forecast_kwh": 1.0,
+        "upper_95": 1.91,
+        "lower_95": 0.5,
+        "upper_80": 1.6,
+        "lower_80": 0.5,
+        "is_peak_warning": false
+      },
+      {
+        "step": 25,
+        "date": "2026-10-24",
+        "display_date": "Oct 24",
+        "day_of_week": 5,
+        "is_weekend": true,
+        "forecast_kwh": 1.87,
+        "upper_95": 2.79,
+        "lower_95": 0.95,
+        "upper_80": 2.47,
+        "lower_80": 1.27,
+        "is_peak_warning": false
+      },
+      {
+        "step": 26,
+        "date": "2026-10-25",
+        "display_date": "Oct 25",
+        "day_of_week": 6,
+        "is_weekend": true,
+        "forecast_kwh": 5.28,
+        "upper_95": 6.21,
+        "lower_95": 4.35,
+        "upper_80": 5.89,
+        "lower_80": 4.67,
+        "is_peak_warning": false
+      },
+      {
+        "step": 27,
+        "date": "2026-10-26",
+        "display_date": "Oct 26",
+        "day_of_week": 0,
+        "is_weekend": false,
+        "forecast_kwh": 7.06,
+        "upper_95": 8.0,
+        "lower_95": 6.12,
+        "upper_80": 7.67,
+        "lower_80": 6.45,
+        "is_peak_warning": true
+      },
+      {
+        "step": 28,
+        "date": "2026-10-27",
+        "display_date": "Oct 27",
+        "day_of_week": 1,
+        "is_weekend": false,
+        "forecast_kwh": 6.9,
+        "upper_95": 7.85,
+        "lower_95": 5.95,
+        "upper_80": 7.52,
+        "lower_80": 6.28,
+        "is_peak_warning": true
+      },
+      {
+        "step": 29,
+        "date": "2026-10-28",
+        "display_date": "Oct 28",
+        "day_of_week": 2,
+        "is_weekend": false,
+        "forecast_kwh": 4.47,
+        "upper_95": 5.43,
+        "lower_95": 3.51,
+        "upper_80": 5.1,
+        "lower_80": 3.84,
+        "is_peak_warning": false
+      },
+      {
+        "step": 30,
+        "date": "2026-10-29",
+        "display_date": "Oct 29",
+        "day_of_week": 3,
+        "is_weekend": false,
+        "forecast_kwh": 1.22,
+        "upper_95": 2.19,
+        "lower_95": 0.5,
+        "upper_80": 1.85,
+        "lower_80": 0.59,
+        "is_peak_warning": false
+      }
+    ],
+    "historical_stats": {
+      "total_kwh": 274.5,
+      "daily_avg_kwh": 4.58,
+      "min_kwh": 0.85,
+      "max_kwh": 8.03,
+      "peak_day": "Aug 25"
+    },
+    "forecast_stats": {
+      "projected_total_kwh": 125.69,
+      "projected_daily_avg_kwh": 4.19,
+      "projected_peak_kwh": 7.53,
+      "peak_forecast_date": "Oct 05"
+    },
+    "model_metrics": {
+      "r2_score": 0.98,
+      "mae": 0.28,
+      "rmse": 0.33,
+      "mape_percent": 9.43,
+      "training_samples": 5760,
+      "algorithm": "Scikit-Learn Ridge (Harmonic Fourier Seasonality)"
+    }
+  }
+}

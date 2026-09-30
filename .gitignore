@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local environment & system files
+powershell.bat
+powershell.cmd
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# Scratch & temporary test files
+scratch/
+test_*.py
