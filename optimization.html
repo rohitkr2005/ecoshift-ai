@@ -396,163 +396,6 @@
 
         <!-- DASHBOARD BODY -->
         <main class="dashboard-content">
-            <!-- 8 KPI EXECUTIVE METRICS -->
-            <section class="telemetry-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 1.5rem;">
-                <!-- 1. Renewable Coverage -->
-                <div class="sensor-card">
-                    <div class="card-header-flex">
-                        <div class="sensor-label-group">
-                            <span class="type-tag" style="color: var(--accent-wind);">Clean Energy Share</span>
-                            <h3 style="font-size: 0.85rem;">Renewable Coverage</h3>
-                        </div>
-                        <div class="sensor-icon-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-wind);">
-                            <i class="fas fa-leaf"></i>
-                        </div>
-                    </div>
-                    <div class="sensor-metric-val">
-                        <span class="value" id="kpiRenCoverage" style="color: var(--accent-wind);">17.6%</span>
-                    </div>
-                    <div class="sensor-footer">
-                        <span>Solar DC + Wind DC Priority Dispatch</span>
-                    </div>
-                </div>
-
-                <!-- 2. Grid Energy Avoided -->
-                <div class="sensor-card">
-                    <div class="card-header-flex">
-                        <div class="sensor-label-group">
-                            <span class="type-tag" style="color: var(--accent-grid);">Thermal Offset</span>
-                            <h3 style="font-size: 0.85rem;">Grid Power Saved</h3>
-                        </div>
-                        <div class="sensor-icon-badge" style="background: rgba(14, 165, 233, 0.15); color: var(--accent-grid);">
-                            <i class="fas fa-tower-broadcast"></i>
-                        </div>
-                    </div>
-                    <div class="sensor-metric-val">
-                        <span class="value" id="kpiGridSaved">496 kWh</span>
-                    </div>
-                    <div class="sensor-footer">
-                        <span>60-Day Cumulative Thermal Draw Cut</span>
-                    </div>
-                </div>
-
-                <!-- 3. Carbon Emissions Avoided -->
-                <div class="sensor-card">
-                    <div class="card-header-flex">
-                        <div class="sensor-label-group">
-                            <span class="type-tag" style="color: #34d399;">Emission Factor 0.82</span>
-                            <h3 style="font-size: 0.85rem;">CO₂ Avoided</h3>
-                        </div>
-                        <div class="sensor-icon-badge" style="background: rgba(52, 211, 153, 0.15); color: #34d399;">
-                            <i class="fas fa-smog"></i>
-                        </div>
-                    </div>
-                    <div class="sensor-metric-val">
-                        <span class="value" id="kpiCo2Avoided">0.407 MT</span>
-                    </div>
-                    <div class="sensor-footer">
-                        <span>406.7 kg CO₂ Greenhouse Gas Eliminated</span>
-                    </div>
-                </div>
-
-                <!-- 4. Carbon Credits Earned -->
-                <div class="sensor-card">
-                    <div class="card-header-flex">
-                        <div class="sensor-label-group">
-                            <span class="type-tag" style="color: #eab308;">Verra VCS Standard</span>
-                            <h3 style="font-size: 0.85rem;">Carbon Credits Earned</h3>
-                        </div>
-                        <div class="sensor-icon-badge" style="background: rgba(234, 179, 8, 0.15); color: #eab308;">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                    </div>
-                    <div class="sensor-metric-val">
-                        <span class="value" id="kpiCarbonCredits" style="color: #eab308;">0.407</span>
-                        <span class="unit">VCU</span>
-                    </div>
-                    <div class="sensor-footer">
-                        <span>1 Credit = 1 MT CO₂ Avoided</span>
-                    </div>
-                </div>
-
-                <!-- 5. Total Net Economic Benefit -->
-                <div class="sensor-card">
-                    <div class="card-header-flex">
-                        <div class="sensor-label-group">
-                            <span class="type-tag" style="color: #38bdf8;">Tariff + Credits</span>
-                            <h3 style="font-size: 0.85rem;">Net Economic Value</h3>
-                        </div>
-                        <div class="sensor-icon-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">
-                            <i class="fas fa-indian-rupee-sign"></i>
-                        </div>
-                    </div>
-                    <div class="sensor-metric-val">
-                        <span class="value" id="kpiTotalSavings" style="color: #38bdf8;">₹4,132</span>
-                    </div>
-                    <div class="sensor-footer">
-                        <span>₹25,136 Annualized Net Generation Value</span>
-                    </div>
-                </div>
-
-                <!-- 6. Trees Equivalent -->
-                <div class="sensor-card">
-                    <div class="card-header-flex">
-                        <div class="sensor-label-group">
-                            <span class="type-tag" style="color: #10b981;">Ecological Impact</span>
-                            <h3 style="font-size: 0.85rem;">Trees Equivalent</h3>
-                        </div>
-                        <div class="sensor-icon-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
-                            <i class="fas fa-tree"></i>
-                        </div>
-                    </div>
-                    <div class="sensor-metric-val">
-                        <span class="value" id="kpiTreesEq">114</span>
-                        <span class="unit">Trees</span>
-                    </div>
-                    <div class="sensor-footer">
-                        <span>Annual Carbon Sequestration Factor</span>
-                    </div>
-                </div>
-
-                <!-- 7. Payback Period -->
-                <div class="sensor-card">
-                    <div class="card-header-flex">
-                        <div class="sensor-label-group">
-                            <span class="type-tag">CapEx Amortization</span>
-                            <h3 style="font-size: 0.85rem;">Payback Period</h3>
-                        </div>
-                        <div class="sensor-icon-badge">
-                            <i class="fas fa-hourglass-half"></i>
-                        </div>
-                    </div>
-                    <div class="sensor-metric-val">
-                        <span class="value" id="kpiPayback">3.38 Yrs</span>
-                    </div>
-                    <div class="sensor-footer">
-                        <span>Down from 6.8 Yrs via Smart Dispatch</span>
-                    </div>
-                </div>
-
-                <!-- 8. 5-Year Capital ROI -->
-                <div class="sensor-card">
-                    <div class="card-header-flex">
-                        <div class="sensor-label-group">
-                            <span class="type-tag" style="color: var(--accent-solar);">Capital Efficiency</span>
-                            <h3 style="font-size: 0.85rem;">5-Year Net ROI</h3>
-                        </div>
-                        <div class="sensor-icon-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-solar);">
-                            <i class="fas fa-chart-pie"></i>
-                        </div>
-                    </div>
-                    <div class="sensor-metric-val">
-                        <span class="value" id="kpiRoi5Year" style="color: var(--accent-solar);">+47.9%</span>
-                    </div>
-                    <div class="sensor-footer">
-                        <span>Net Profit over ₹85,000 Microgrid CapEx</span>
-                    </div>
-                </div>
-            </section>
-
             <!-- REAL-TIME DISPATCH FLOW DIAGRAM -->
             <section class="flow-diagram-card">
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
@@ -685,42 +528,21 @@
                 </div>
             </section>
 
-            <!-- CHARTS SECTION: 60-DAY DISPATCH + ROI VELOCITY -->
-            <section style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-                <!-- Chart 1: 60-Day Stacked Optimization Dispatch -->
-                <div class="chart-container-card">
-                    <div class="chart-card-header">
-                        <div>
-                            <h3>
-                                <i class="fas fa-chart-area" style="color: var(--accent-wind);"></i>
-                                <span>60-Day Telemetry Dispatch Optimization (5,760 Samples)</span>
-                            </h3>
-                            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">
-                                Green = Clean Energy Utilized; Blue = Grid Shortfall; Dashed Orange = Baseline Uncoordinated Draw.
-                            </p>
-                        </div>
-                    </div>
-                    <div style="height: 310px;">
-                        <canvas id="optimizationChartCanvas"></canvas>
+            <!-- 60-DAY TELEMETRY DISPATCH OPTIMIZATION CHART -->
+            <section class="chart-container-card" style="margin-bottom: 1.5rem;">
+                <div class="chart-card-header">
+                    <div>
+                        <h3>
+                            <i class="fas fa-chart-area" style="color: var(--accent-wind);"></i>
+                            <span>60-Day Telemetry Dispatch Optimization (5,760 Samples)</span>
+                        </h3>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">
+                            Green = Clean Energy Utilized; Blue = Grid Shortfall; Dashed Orange = Baseline Uncoordinated Draw.
+                        </p>
                     </div>
                 </div>
-
-                <!-- Chart 2: Cumulative ROI Velocity Curve -->
-                <div class="chart-container-card">
-                    <div class="chart-card-header">
-                        <div>
-                            <h3>
-                                <i class="fas fa-arrow-trend-up" style="color: #eab308;"></i>
-                                <span>Cumulative Financial & ESG Velocity</span>
-                            </h3>
-                            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">
-                                Electricity bill savings (₹) + Verified Carbon Credit revenue monetization.
-                            </p>
-                        </div>
-                    </div>
-                    <div style="height: 310px;">
-                        <canvas id="roiVelocityChartCanvas"></canvas>
-                    </div>
+                <div style="height: 350px;">
+                    <canvas id="optimizationChartCanvas"></canvas>
                 </div>
             </section>
 

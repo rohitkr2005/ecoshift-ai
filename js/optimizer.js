@@ -182,15 +182,19 @@ class DispatchOptimizer {
         const m = this.computeMetrics();
         if (!m) return;
 
-        // 1. KPI Cards
-        document.getElementById('kpiRenCoverage').textContent = m.renCoveragePct + '%';
-        document.getElementById('kpiGridSaved').textContent = Math.round(m.gridSaved).toLocaleString() + ' kWh';
-        document.getElementById('kpiCo2Avoided').textContent = m.co2AvoidedMt + ' MT';
-        document.getElementById('kpiCarbonCredits').textContent = m.credits;
-        document.getElementById('kpiTotalSavings').textContent = '₹' + m.totalNetInr.toLocaleString();
-        document.getElementById('kpiPayback').textContent = m.paybackYears === 'N/A' ? 'N/A' : m.paybackYears + ' Yrs';
-        document.getElementById('kpiRoi5Year').textContent = m.roi5Year + '%';
-        document.getElementById('kpiTreesEq').textContent = m.treesEq.toLocaleString();
+        // 1. KPI Cards (if present)
+        const setVal = (id, val) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = val;
+        };
+        setVal('kpiRenCoverage', m.renCoveragePct + '%');
+        setVal('kpiGridSaved', Math.round(m.gridSaved).toLocaleString() + ' kWh');
+        setVal('kpiCo2Avoided', m.co2AvoidedMt + ' MT');
+        setVal('kpiCarbonCredits', m.credits);
+        setVal('kpiTotalSavings', '₹' + m.totalNetInr.toLocaleString());
+        setVal('kpiPayback', m.paybackYears === 'N/A' ? 'N/A' : m.paybackYears + ' Yrs');
+        setVal('kpiRoi5Year', m.roi5Year + '%');
+        setVal('kpiTreesEq', m.treesEq.toLocaleString());
 
         // 2. Real-Time Energy Flow Routing Diagram
         this.renderEnergyFlow(m);
