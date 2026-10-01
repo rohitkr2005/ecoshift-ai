@@ -377,20 +377,6 @@
                     <i class="far fa-clock"></i>
                     <span id="liveClock">Loading time...</span>
                 </div>
-
-                <!-- Mode Switcher -->
-                <div class="dispatch-mode-toggle" style="display: flex; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 2px;">
-                    <button class="tab-btn active" id="btnModeOptimized" style="padding: 0.45rem 0.85rem; font-size: 0.78rem;">
-                        <i class="fas fa-bolt" style="color: var(--accent-wind);"></i> EcoShift AI Priority
-                    </button>
-                    <button class="tab-btn" id="btnModeBaseline" style="padding: 0.45rem 0.85rem; font-size: 0.78rem;">
-                        <i class="fas fa-plug"></i> Unoptimized Grid
-                    </button>
-                </div>
-
-                <button class="btn-ctrl btn-primary" onclick="window.optimizer.openCertificateModal()" style="background: linear-gradient(135deg, #eab308, #ca8a04); color: #000; font-weight: 700;">
-                    <i class="fas fa-award"></i> View ESG Certificate
-                </button>
             </div>
         </header>
 
@@ -483,51 +469,6 @@
                 </div>
             </section>
 
-            <!-- INTERACTIVE SCENARIO & SENSITIVITY CONTROLS -->
-            <section class="ai-controls-grid" style="margin-bottom: 1.5rem;">
-                <div class="ai-deck-card">
-                    <div class="deck-header">
-                        <h3>
-                            <i class="fas fa-sliders" style="color: var(--accent-wind);"></i>
-                            <span>Scenario Stress Testing & ESG Sensitivity</span>
-                        </h3>
-                        <span class="status-tag ok">REAL-TIME RE-CALC</span>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                        <!-- Slider 1: Carbon Credit Market Price -->
-                        <div class="slider-group">
-                            <div class="slider-label-row">
-                                <span class="k">Carbon Credit Price:</span>
-                                <span class="v" id="carbonPriceVal">₹1,500</span>
-                            </div>
-                            <input type="range" class="ai-range-slider" id="carbonPriceSlider" min="800" max="3500" value="1500" step="50" style="accent-color: #eab308;">
-                            <span style="font-size: 0.68rem; color: var(--text-muted);">Simulates Indian Carbon Market (ICM) / Verra voluntary credit pricing.</span>
-                        </div>
-
-                        <!-- Slider 2: Commercial Grid Tariff -->
-                        <div class="slider-group">
-                            <div class="slider-label-row">
-                                <span class="k">Commercial Grid Tariff:</span>
-                                <span class="v" id="tariffVal">₹9.50 / kWh</span>
-                            </div>
-                            <input type="range" class="ai-range-slider" id="tariffSlider" min="7.0" max="15.0" value="9.5" step="0.25" style="accent-color: #38bdf8;">
-                            <span style="font-size: 0.68rem; color: var(--text-muted);">Adjusts municipal thermal electricity billing rates avoided.</span>
-                        </div>
-
-                        <!-- Slider 3: Renewable Capacity Scale -->
-                        <div class="slider-group">
-                            <div class="slider-label-row">
-                                <span class="k">Array Capacity Scale:</span>
-                                <span class="v" id="renScaleVal">100% Array Size</span>
-                            </div>
-                            <input type="range" class="ai-range-slider" id="renScaleSlider" min="50" max="250" value="100" step="10" style="accent-color: #10b981;">
-                            <span style="font-size: 0.68rem; color: var(--text-muted);">Simulates expanding solar PV panels and wind micro-turbines.</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <!-- 60-DAY TELEMETRY DISPATCH OPTIMIZATION CHART -->
             <section class="chart-container-card" style="margin-bottom: 1.5rem;">
                 <div class="chart-card-header">
@@ -594,55 +535,6 @@
                 <span>Renewable Dispatch & Carbon ROI Module • InnoVenture 2026</span>
             </div>
         </footer>
-    </div>
-
-    <!-- OFFICIAL ESG CARBON CREDIT CERTIFICATE MODAL -->
-    <div class="cert-modal-backdrop" id="certModal">
-        <div class="cert-paper">
-            <button class="cert-close-btn" onclick="window.optimizer.closeCertificateModal()">
-                <i class="fas fa-xmark"></i>
-            </button>
-
-            <div class="cert-header-icon">
-                <i class="fas fa-medal"></i>
-            </div>
-            <div class="cert-title">Verified Carbon Offset Certificate</div>
-            <div class="cert-subtitle">EcoShift AI Smart Microgrid Dispatch Protocol</div>
-
-            <p class="cert-body-text">
-                This certifies that the energy optimization algorithms deployed by <br>
-                <strong class="cert-recipient" id="certRecipientName">Rohit Kumar Mandal</strong><br>
-                representing <strong id="certOrgName" style="color: #ffffff;">Tribhuvan College of Environment & Development Sciences</strong><br>
-                have verified and sequestered the following environmental carbon offset:
-            </p>
-
-            <div class="cert-badges-grid">
-                <div class="cert-badge-box">
-                    <span class="k">Carbon Avoided</span>
-                    <span class="v" id="certCreditsVal" style="color: #10b981;">0.407 MT</span>
-                </div>
-                <div class="cert-badge-box">
-                    <span class="k">Clean Energy Dispatched</span>
-                    <span class="v" id="certKwhSavedVal" style="color: #38bdf8;">496 kWh</span>
-                </div>
-                <div class="cert-badge-box">
-                    <span class="k">Verification Standard</span>
-                    <span class="v" style="color: #eab308;">Verra VCS / CEA</span>
-                </div>
-            </div>
-
-            <div class="cert-footer-meta">
-                <div>
-                    <strong>Date Certified:</strong> <span id="certDateStr">September 30, 2026</span>
-                </div>
-                <div>
-                    <strong>Serial Number:</strong> <span id="certSerialNum" style="font-family: var(--font-mono); color: #ffffff;">VER-2026-EC-481920</span>
-                </div>
-                <div>
-                    <strong>Audit Engine:</strong> <span>EcoShift Dispatch AI v2.4</span>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Scripts -->
